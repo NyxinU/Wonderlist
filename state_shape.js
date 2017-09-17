@@ -30,7 +30,8 @@
         title: "Fullstack Proposal",
         due: "9/18/2017",
         reward: "eat ice cream",
-        notes: ["note1"]
+        notes: ["note1"],
+        completed: false
       },
       "task2" : {
         id: "task2",
@@ -38,7 +39,8 @@
         title: "Do UI/UX Homework",
         due: "9/18/2017",
         reward: "take 15 min break",
-        notes: []
+        notes: [],
+        completed: false
       }
     }
     allIds : ["task1", "task2"]
