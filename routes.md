@@ -32,5 +32,13 @@ Sessions
 
 Frontend Routes
 
+/ - homescreen
 /login
 /signup
+/list/all - all task
+/list/today - task due today
+/list/tommorrow - task due tommorrow
+/list/this week - task due this week
+/list/trash - task in trash
+/list/:id/completed - task completed in that list
+/list/:id - custom list
