@@ -15,3 +15,22 @@ Tasks
 - POST /api/lists - creates a task
 - PATCH /api/lists/:id - edit a task
 - DELETE /api/lists/:id - remove a task
+
+Notes
+- Get /api/tasks/notes - returns all notes for that task
+- POST /api/notes - creates a note
+- PATCH /api/notes/:id - edit a note
+- DELETE /api/notes/:id - remove a note
+
+Users
+
+- GET /api/users/:id - return user info 
+- POST /api/users - sign up
+
+Sessions 
+- POST /api/session/:id - login 
+
+Frontend Routes
+
+/login
+/signup
