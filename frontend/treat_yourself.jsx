@@ -3,5 +3,5 @@ import ReactDOM from 'react-dom';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  ReactDOM.render( <h1>Don't Forget to Treat Yorself! </h1> , root);
+  ReactDOM.render( <h1>Don't Forget to Treat Yourself! </h1> , root);
 });
