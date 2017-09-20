@@ -4,7 +4,7 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       login(@user)
-      # renders all task list
+      render "api/users/show"
     else
       render json: @user.errors.full_mesages, status: 422
     end
