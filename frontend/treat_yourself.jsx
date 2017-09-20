@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as SessionApiUtil from './util/session_api_util';
+import * as SessionApiUtil from './frontend/actions/session_actions';
 
 window.login = SessionApiUtil.login;
 window.logout = SessionApiUtil.logout;
-window.signup = SessionApiUtil.signup; 
+window.signup = SessionApiUtil.signup;
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
