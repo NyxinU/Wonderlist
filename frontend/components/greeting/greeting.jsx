@@ -7,7 +7,7 @@ const Greeting = ({ currentUser, logout }) => (
 
 const welcomeMessage = (currentUser, logout) => (
   <div>
-    <h2>Hi, {currentUser.first_name}!</h2>
+    <h2>Don't forget to treat yourself {currentUser.first_name}!</h2>
     <button onClick={logout}>Log Out</button>
   </div>
 );

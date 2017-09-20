@@ -3,7 +3,7 @@ import GreetingContainer from './greeting/greeting_container';
 
 const App = () => (
   <div>
-    <h1> Treat Yourself</h1>
+    <h2> Hey! </h2>
     <GreetingContainer />
   </div>
 );
