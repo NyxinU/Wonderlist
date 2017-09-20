@@ -10,6 +10,7 @@ class Api::SessionsController < ApplicationController
       # render all task list
     else
       render json: ["Invalid username or Password"], status: 401
+    end 
   end
 
   def destroy
