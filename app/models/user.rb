@@ -8,10 +8,11 @@ class User < ApplicationRecord
             :session_token,
             :email,
             :first_name,
-            :last_name, 
+            :last_name,
              presence: true
 
   validates :username,
+            :email,
              uniqueness: true
 
   validates :password,
