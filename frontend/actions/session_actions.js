@@ -8,13 +8,16 @@ export const receiveCurrentUser = (currentUser) => ({
   currentUser
 });
 
-export const receiveSessionErrors = (sessionErrors) => ({
+export const receiveSessionErrors = (sessionErrors) => {
+ console.log(sessionErrors);
+  return {
   type: RECEIVE_SESSION_ERRORS,
   sessionErrors
-});
+};
+};
 
-export const login = user => dispatch => (
-  SessionApiUtil.login(user).then(user => (
+export const login = formUser => dispatch => (
+  SessionApiUtil.login(formUser).then(user => (
     dispatch(receiveCurrentUser(user))
   ), err => (
     dispatch(receiveSessionErrors(err.responseJSON))
