@@ -11,7 +11,14 @@ class SessionForm extends React.Component {
       first_name: '',
       last_name: ''};
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
     this.update = this.update.bind(this);
+    this.printUsername = this.printUsername.bind(this);
+    this.printPassword = this.printPassword.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   handleSubmit(e) {
@@ -25,6 +32,32 @@ class SessionForm extends React.Component {
       return <Link to="/signup" className="btn-info">Sign up</Link>;
     } else {
       return <Link to="/login" className="btn-info">Log in</Link>;
+    }
+  }
+
+  demoLogin(e) {
+    e.preventDefault();
+    const username = "invisibleman";
+    const password = "teddywinters";
+
+    this.printUsername(username);
+    setTimeout(() => this.printPassword(password), 1300);
+
+    setTimeout(()=> {
+      const user = Object.assign({}, this.state);
+      this.props.processForm(user);
+    }, 2800);
+  }
+
+  printUsername(username) {
+    for (let i = 0; i < username.length; i++) {
+      setTimeout(() => this.setState({ username: username.slice(0, i + 1) }),i * 100);
+    }
+  }
+
+  printPassword(password) {
+    for (let i = 0; i < password.length; i++) {
+      setTimeout(() => this.setState({ password: password.slice(0, i + 1) }),i * 100);
     }
   }
 
@@ -73,6 +106,10 @@ class SessionForm extends React.Component {
             <input type="submit"
               className="session-create-button"
               value={this.props.formType === "login" ? "Log in" : "Sign up"} />
+            <br/>
+            <button onClick={this.demoLogin}>
+              Demo Login
+            </button>
           </div>
         </form>
       </div>

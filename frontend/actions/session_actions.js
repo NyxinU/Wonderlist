@@ -2,19 +2,21 @@ import * as SessionApiUtil from '../util/session_api_util';
 
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
   currentUser
 });
 
-export const receiveSessionErrors = (sessionErrors) => {
- console.log(sessionErrors);
-  return {
+export const receiveSessionErrors = (sessionErrors) => ({
   type: RECEIVE_SESSION_ERRORS,
   sessionErrors
-};
-};
+});
+
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
+});
 
 export const login = formUser => dispatch => (
   SessionApiUtil.login(formUser).then(user => (
