@@ -51,7 +51,9 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         {this.navLink()}
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          {this.props.formType === "login" ? "Welcome Back!" : "Sign up for Free"}
+          {this.props.formType === "login" ?
+            "Been here before? Welcome Back!" :
+            "Sign up for Free"}
           {this.renderErrors()}
           <div className="login-form">
               <input type="text"
