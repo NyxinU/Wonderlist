@@ -1,8 +1,16 @@
 .btn-info {
+	float:right;
+	margin: 43px -2px 0 0;
+	font-size: 15px;
+	padding: 5px 11px 4px;
+	font-weight: 700;
+	font-family: MuseoSansRounded, "Helvetica Neue", Helvetica, Arial;
 	background-color: rgba(0, 96, 191, 0.1);
 	border-color: transparent;
 	color: rgba(0, 0, 0, 0.5);
-	font-size: 15px; 
+	display:inline-block;
+	text-align: center;
+
 	// font-weight: bold;
 	// padding: 7px 9px;
 	// border-radius: 3px;
