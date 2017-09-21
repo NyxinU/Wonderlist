@@ -14,7 +14,7 @@ class SessionForm extends React.Component {
     this.demoLogin = this.demoLogin.bind(this);
     this.update = this.update.bind(this);
     this.printUsername = this.printUsername.bind(this);
-    this.printPassword = this.printPassword.bind(this);
+    this.printPassword = this.printPassword.bind(this); 
   }
 
   componentWillReceiveProps(newProps) {
