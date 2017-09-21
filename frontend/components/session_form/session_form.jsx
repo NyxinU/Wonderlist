@@ -17,8 +17,11 @@ class SessionForm extends React.Component {
     this.printPassword = this.printPassword.bind(this);
   }
 
-  componentWillUnmount() {
-    this.props.clearErrors();
+  componentWillReceiveProps(newProps) {
+    if (this.props.location.pathname !== newProps.location.pathname) {
+      console.log(this.props);
+      this.props.clearErrors();
+    }
   }
 
   handleSubmit(e) {
