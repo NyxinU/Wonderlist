@@ -22,9 +22,9 @@ class SessionForm extends React.Component {
 
   navLink() {
     if (this.props.formType === 'login') {
-      return <Link to="/signup">Sign up</Link>;
+      return <Link to="/signup" className="btn btn-info">Sign up</Link>;
     } else {
-      return <Link to="/login">Log in</Link>;
+      return <Link to="/login" className="btn btn-info">Log in</Link>;
     }
   }
 
@@ -47,33 +47,30 @@ class SessionForm extends React.Component {
 }
 
   render () {
-    console.log(this.state);
     return (
       <div className="login-form-container">
+        {this.navLink()}
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Hey there!
-          <br/>
-          Please {this.props.formType} or {this.navLink()}
+          {this.props.formType === "login" ? "Welcome Back!" : "Sign up for Free"}
           {this.renderErrors()}
           <div className="login-form">
-            <br/>
-            <label>Username:
               <input type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className = "login-input"
+                placeholder="Username"
                 />
-            </label>
             <br/>
-            <label>Password:
               <input type="password"
                  value={this.state.password}
                  onChange={this.update('password')}
                  className="login-input"
+                 placeholder="Password"
                 />
-            </label>
             <br/>
-            <input type="submit" value="Submit" />
+            <input type="submit"
+              className="session-create-button"
+              value={this.props.formType === "login" ? "Log in" : "Sign up"} />
           </div>
         </form>
       </div>
