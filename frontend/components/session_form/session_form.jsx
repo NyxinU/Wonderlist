@@ -108,7 +108,7 @@ class SessionForm extends React.Component {
             className="session-create-button"
             value={"Log in"} />
           <br/>
-          <button onClick={this.demoLogin}>
+          <button onClick={this.demoLogin} className="session-create-button">
             Demo Login
           </button>
         </div>
@@ -168,12 +168,14 @@ class SessionForm extends React.Component {
 
   render () {
     return (
-      <div className="session-form-container">
-        {this.navLink()}
-        {this.props.location.pathname === "/login" ?
-          this.loginForm() :
-          this.signUpForm()}
-      </div>
+        <div className="session-page">
+          <header className="login-signout">{this.navLink()}</header>
+          <div className="session-form-container">
+            {this.props.location.pathname === "/login" ?
+              this.loginForm() :
+              this.signUpForm()}
+          </div>
+        </div>
     );
   }
 }
