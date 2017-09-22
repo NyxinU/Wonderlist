@@ -51,7 +51,7 @@ class SessionForm extends React.Component {
     setTimeout(()=> {
       const user = Object.assign({}, this.state);
       this.props.processForm(user);
-    }, 2200);
+    }, 1750);
   }
 
   printUsername(username) {

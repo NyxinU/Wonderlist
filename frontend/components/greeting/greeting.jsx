@@ -19,7 +19,7 @@ const sessionLinks = () => (
       &nbsp; | &nbsp;
       <Link to="/signup">Sign up</Link>
     </div>
-    <img src='https://c2.sfdcstatic.com/content/dam/blogs/ca/Blog%20Posts/How%20to%20Increase%20Productivity%20Without%20Increasing%20Stress_Header%20Image-1.png'/>
+    <img className='img' src='https://c2.sfdcstatic.com/content/dam/blogs/ca/Blog%20Posts/How%20to%20Increase%20Productivity%20Without%20Increasing%20Stress_Header%20Image-1.png'/>
   </div>
 );
 

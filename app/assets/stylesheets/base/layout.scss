@@ -1,6 +1,6 @@
 * {
 	font-size: 20px;
-	font-family: 'Architects Daughter', cursive;
+	font-family: 'Ubuntu', sans-serif;
 }
 
 .login-signout {
@@ -67,7 +67,7 @@
 .session-create-button, .input[type=submit], .session-delete-button {
 	height: 36px;
 	color: #ffffff;
-	background:#009dff;
+	background:#4bb8fb;
 	border:0 none;
 	cursor:pointer;
 	-webkit-border-radius: 5px;
@@ -77,4 +77,8 @@
 .session-links {
 	display: flex;
 	justify-content: flex-end;
+}
+
+.img {
+  min-width: 100%;
 }
