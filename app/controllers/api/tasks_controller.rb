@@ -30,6 +30,7 @@ class Api::TasksController < ApplicationController
       render :show
     else
       render json @task.errors.full_messages, status: 422
+    end 
   end
 
   private
@@ -37,4 +38,5 @@ class Api::TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:title, :list_id, :due, :reward, :completed)
   end
+
 end
