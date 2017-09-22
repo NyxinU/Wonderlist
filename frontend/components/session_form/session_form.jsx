@@ -94,14 +94,14 @@ class SessionForm extends React.Component {
               value={this.state.username}
               onChange={this.update('username')}
               className = "session-form-input"
-              placeholder=" Username"
+              placeholder="Username"
               />
           <br/>
             <input type="password"
                value={this.state.password}
                onChange={this.update('password')}
                className="session-form-input"
-               placeholder=" Password"
+               placeholder="Password"
               />
           <br/>
           <input type="submit"
@@ -126,35 +126,35 @@ class SessionForm extends React.Component {
               value={this.state.first_name}
               onChange={this.update('first_name')}
               className = "session-form-input"
-              placeholder=" First Name"
+              placeholder="First Name"
               />
           <br/>
             <input type="text"
               value={this.state.last_name}
               onChange={this.update('last_name')}
               className = "session-form-input"
-              placeholder=" Last Name"
+              placeholder="Last Name"
               />
           <br/>
             <input type="text"
               value={this.state.email}
               onChange={this.update('email')}
               className = "session-form-input"
-              placeholder=" Email"
+              placeholder="Email"
               />
           <br/>
             <input type="text"
               value={this.state.username}
               onChange={this.update('username')}
               className = "session-form-input"
-              placeholder=" Username"
+              placeholder="Username"
               />
           <br/>
             <input type="password"
                value={this.state.password}
                onChange={this.update('password')}
                className="session-form-input"
-               placeholder=" Password"
+               placeholder="Password"
               />
           <br/>
           <input type="submit"

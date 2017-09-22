@@ -14,12 +14,15 @@ const welcomeMessage = (currentUser, logout) => (
 
 const sessionLinks = () => (
   <div className="homepage">
-    <div className="session-links">
-      <Link to="/login">Log in</Link>
-      &nbsp; | &nbsp;
-      <Link to="/signup">Sign up</Link>
-    </div>
-    <img className='img' src='https://c2.sfdcstatic.com/content/dam/blogs/ca/Blog%20Posts/How%20to%20Increase%20Productivity%20Without%20Increasing%20Stress_Header%20Image-1.png'/>
+    <nav className="nav-links">
+      <div className="nav-title">Treat Yourself</div>
+      <div className="nav-login-logout">
+        <Link to="/login">Log in</Link>
+        &nbsp; | &nbsp;
+        <Link to="/signup">Sign up</Link>
+      </div>
+    </nav>
+  <img className='img' src='https://c2.sfdcstatic.com/content/dam/blogs/ca/Blog%20Posts/How%20to%20Increase%20Productivity%20Without%20Increasing%20Stress_Header%20Image-1.png'/>
   </div>
 );
 

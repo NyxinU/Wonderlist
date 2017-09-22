@@ -3,6 +3,16 @@
 	font-family: 'Ubuntu', sans-serif;
 }
 
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.homepage {
+	background-color: #bfdce8;
+	height: 100vh;
+}
+
 .login-signout {
 	display: flex;
 	justify-content: flex-end;
@@ -60,23 +70,53 @@
 .session-form-input {
 	width: 400px;
 	height: 40px;
+	padding-left: 10px;
 	border-radius: 3px;
 	border: 1px solid #ccc
 }
 
+
 .session-create-button, .input[type=submit], .session-delete-button {
 	height: 36px;
 	color: #ffffff;
-	background:#4bb8fb;
+	background:#49b3f4;
 	border:0 none;
 	cursor:pointer;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 }
 
-.session-links {
+.session-create-button:hover, .input[type=submit]:hover, .session-delete-button:hover {
+	background-color:#3ea3df;
+}
+
+.btn-info:hover {
+	background-color: rgba(#0060bf, 0.15)
+}
+
+.nav-links {
 	display: flex;
-	justify-content: flex-end;
+	justify-content: space-between;
+	margin-top: 5px;
+}
+.nav-title {
+	display: inline-block;
+	font-size: 35px;
+	font-family: 'Architects Daughter', cursive;
+	margin-left: 5%;
+	// padding-top: 2px;
+}
+
+.nav-login-logout {
+	display: inline-block;
+	margin-top: 13px;
+	margin-right: 3%;
+}
+
+.nav-login-logout > a {
+	color: black;
+	text-decoration: none;
+	margin: 3px;
 }
 
 .img {
