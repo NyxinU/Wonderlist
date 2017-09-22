@@ -5,7 +5,7 @@ class CreateTasks < ActiveRecord::Migration[5.1]
       t.integer :list_id
       t.date :due
       t.string :reward
-      t.boolean :completed, null: false, default: false 
+      t.boolean :completed, null: false, default: false
 
       t.timestamps
     end

@@ -15,3 +15,17 @@ User.create!(
     first_name: 'Ivan',
     last_name: 'Bliminse'
   )
+
+Task.destroy_all
+
+Task.create!(
+  title: 'be awesome',
+  due: "2017-09-22",
+  reward: "awesomeness"
+ )
+
+Task.create!(
+  title: 'learn latin',
+  due: "2017-09-25",
+  reward: "get vanilla ice cream"
+ )

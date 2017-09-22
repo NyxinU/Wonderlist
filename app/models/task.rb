@@ -13,7 +13,7 @@
 #
 
 class Task < ApplicationRecord
-  validates :title, :completed, presence: true
+  validates :title, presence: true
   validates :completed, inclusion: { in: [true, false] }
 
 end
