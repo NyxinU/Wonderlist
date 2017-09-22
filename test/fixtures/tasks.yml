@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  list_id: 1
+  due: 2017-09-22
+  reward: MyString
+  completed: false
+
+two:
+  title: MyString
+  list_id: 1
+  due: 2017-09-22
+  reward: MyString
+  completed: false
