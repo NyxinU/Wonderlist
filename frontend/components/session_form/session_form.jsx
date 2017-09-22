@@ -46,23 +46,23 @@ class SessionForm extends React.Component {
     const password = "teddywinters";
 
     this.printUsername(username);
-    setTimeout(() => this.printPassword(password), 1300);
+    setTimeout(() => this.printPassword(password), 850);
 
     setTimeout(()=> {
       const user = Object.assign({}, this.state);
       this.props.processForm(user);
-    }, 2800);
+    }, 2200);
   }
 
   printUsername(username) {
     for (let i = 0; i < username.length; i++) {
-      setTimeout(() => this.setState({ username: username.slice(0, i + 1) }),i * 100);
+      setTimeout(() => this.setState({ username: username.slice(0, i + 1) }),i * 70);
     }
   }
 
   printPassword(password) {
     for (let i = 0; i < password.length; i++) {
-      setTimeout(() => this.setState({ password: password.slice(0, i + 1) }),i * 100);
+      setTimeout(() => this.setState({ password: password.slice(0, i + 1) }),i * 70);
     }
   }
 
@@ -94,14 +94,14 @@ class SessionForm extends React.Component {
               value={this.state.username}
               onChange={this.update('username')}
               className = "session-form-input"
-              placeholder="Username"
+              placeholder=" Username"
               />
           <br/>
             <input type="password"
                value={this.state.password}
                onChange={this.update('password')}
                className="session-form-input"
-               placeholder="Password"
+               placeholder=" Password"
               />
           <br/>
           <input type="submit"
@@ -126,35 +126,35 @@ class SessionForm extends React.Component {
               value={this.state.first_name}
               onChange={this.update('first_name')}
               className = "session-form-input"
-              placeholder="First Name"
+              placeholder=" First Name"
               />
           <br/>
             <input type="text"
               value={this.state.last_name}
               onChange={this.update('last_name')}
               className = "session-form-input"
-              placeholder="Last Name"
+              placeholder=" Last Name"
               />
           <br/>
             <input type="text"
               value={this.state.email}
               onChange={this.update('email')}
               className = "session-form-input"
-              placeholder="Email"
+              placeholder=" Email"
               />
           <br/>
             <input type="text"
               value={this.state.username}
               onChange={this.update('username')}
               className = "session-form-input"
-              placeholder="Username"
+              placeholder=" Username"
               />
           <br/>
             <input type="password"
                value={this.state.password}
                onChange={this.update('password')}
                className="session-form-input"
-               placeholder="Password"
+               placeholder=" Password"
               />
           <br/>
           <input type="submit"
@@ -169,7 +169,7 @@ class SessionForm extends React.Component {
   render () {
     return (
         <div className="session-page">
-          <header className="login-signout">{this.navLink()}</header>
+          <div className="login-signout">{this.navLink()}</div>
           <div className="session-form-container">
             {this.props.location.pathname === "/login" ?
               this.loginForm() :

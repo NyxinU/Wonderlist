@@ -1,11 +1,22 @@
+* {
+	font-size: 20px;
+	font-family: 'Architects Daughter', cursive;
+}
+
+.login-signout {
+	display: flex;
+	justify-content: flex-end;
+}
+
 .btn-info {
-	float:right;
-	margin: 5px -2px 0 0;
-	font-size: 15px;
-	padding: 5px 11px 4px;
+	margin-right: 10%;
+	margin-top: 25px;
+	margin-bottom: 130px;
+	padding: 6px 12px 6px;
 	font-weight: 700;
 	background-color: rgba(0, 96, 191, 0.1);
 	border-color: transparent;
+	border-radius: 3px;
 	color: rgba(0, 0, 0, 0.5);
 	text-align: center;
 	text-decoration: none;
@@ -21,7 +32,7 @@
 	border: 1px solid transparent;
 	white-space: nowrap;
 	padding: 6px 12px;
-	font-size: 16px;
+
 	line-height: 1.42857143;
 	border-radius: 3px;
 }
@@ -50,13 +61,12 @@
 	width: 400px;
 	height: 40px;
 	border-radius: 3px;
-	font-size: 18px;
 	border: 1px solid #ccc
 }
 
-.session-create-button {
+.session-create-button, .input[type=submit], .session-delete-button {
 	height: 36px;
-	font-size: 18px;
+	color: #ffffff;
 	background:#009dff;
 	border:0 none;
 	cursor:pointer;
@@ -64,12 +74,7 @@
 	border-radius: 5px;
 }
 
-input[type=submit] {
-	height: 36px;
-	font-size: 18px;
-	background:#009dff;
-	border:0 none;
-	cursor:pointer;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+.session-links {
+	display: flex;
+	justify-content: flex-end;
 }
