@@ -23,7 +23,12 @@ const sessionLinks = () => (
       </div>
     </nav>
   <img className='img' src='https://c2.sfdcstatic.com/content/dam/blogs/ca/Blog%20Posts/How%20to%20Increase%20Productivity%20Without%20Increasing%20Stress_Header%20Image-1.png'/>
+  <p className="homepage-break-message">Remember to take a break.</p>
+  <div className="homepage-quote">
+    <sub>If you're tired</sub>
+    <sub>Learn to rest, not quit!</sub>
   </div>
+</div>
 );
 
 export default Greeting;
