@@ -1,3 +1,1 @@
-json.task do
-  json.extract! @task, :id, :title, :due, :reward, :completed
-end 
+json.extract! @task, :id, :title, :due, :reward, :completed
