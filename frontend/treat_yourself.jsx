@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
   window.logout = SessionApiUtil.logout;
   window.signup = SessionApiUtil.signup;
   window.requestAllTasks = TaskUtil.requestAllTasks;
+  window.requestTask = TaskUtil.requestTask;
+  window.createTask = TaskUtil.createTask;
+  window.updateTask = TaskUtil.updateTask;
+  window.deleteTask = TaskUtil.deleteTask;
 // testing end
 
   const root = document.getElementById('root');

@@ -5,6 +5,12 @@ class Api::TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
+
+    if @task
+      render :show
+    else
+      render json: ['This task does not exist'], status: 404
+    end
   end
 
   def create
@@ -13,24 +19,32 @@ class Api::TasksController < ApplicationController
     if @task.save!
       render :show
     else
-      render json: @task.errors.full_messages, status: 422
+      render json: ['Please give the task a title'], status: 422
     end
   end
 
   def destroy
     @task = Task.find(params[:id])
-    @task.destroy
 
-    render :show
+    if @task
+      @task.destroy
+      render :show
+    else
+      render json: ["Task does not exist"], status: 404
+    end
   end
 
   def update
     @task = Task.find(params[:id])
+    # unless @task 
+    #   render json: ["Task does not exist"], status: 404
+    # end
+
     if @task.update(task_params)
       render :show
     else
-      render json @task.errors.full_messages, status: 422
-    end 
+      render json: @task.errors.full_messages, status: 422
+    end
   end
 
   private

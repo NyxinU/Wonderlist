@@ -8,14 +8,14 @@ export const fetchTasks = () => (
 export const fetchTask = id => (
   $.ajax({
     method: 'GET',
-    url: `/api/tasks/${id}`
+    url: `/api/tasks/${id}`,
   })
 );
 
 export const createTask = task => (
   $.ajax({
     method: 'POST',
-    url: `/api/tasks/${task.id}`,
+    url: `/api/tasks/`,
     data: { task }
   })
 );
@@ -31,6 +31,6 @@ export const updateTask = task => (
 export const destroyTask = id => (
   $.ajax({
     method: 'DELETE',
-    url: `/api/task/${id}`
+    url: `/api/tasks/${id}`
   })
 );
