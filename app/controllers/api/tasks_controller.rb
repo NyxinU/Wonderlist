@@ -16,10 +16,10 @@ class Api::TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
 
-    if @task.save!
+    if @task.save
       render :show
     else
-      render json: ['Please give the task a title'], status: 422
+      render json: @task.errors.full_messages, status: 422
     end
   end
 
@@ -36,7 +36,7 @@ class Api::TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    # unless @task 
+    # unless @task
     #   render json: ["Task does not exist"], status: 404
     # end
 

@@ -11,8 +11,7 @@ const TaskErrorsReducer = (state = [], action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_TASK_ERRORS:
-    console.log("task errors reducer");
-    console.log(action);
+      return action.taskErrors;
     case RECEIVE_TASK:
       return _nullErrors;
     case REMOVE_TASK:

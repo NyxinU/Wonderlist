@@ -16,9 +16,9 @@ export const requestTask = id => dispatch => (
 );
 
 export const createTask = task => dispatch => (
-  TaskUtil.createTask(task).then(task => dispatch(receiveTask(task))
-  ,err => dispatch(receiveTaskErrors(err.responseJSON)))
-);
+  TaskUtil.createTask(task).then(task => (dispatch(receiveTask(task))
+),err => (dispatch(receiveTaskErrors(err.responseJSON)))
+));
 
 export const updateTask = task => dispatch => (
   TaskUtil.updateTask(task).then(task => dispatch(receiveTask(task))
