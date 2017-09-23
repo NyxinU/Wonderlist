@@ -40,7 +40,7 @@ export const receiveTask = task => ({
 export const removeTask = task => ({
   type: REMOVE_TASK,
   task
-})
+});
 
 export const receiveTaskErrors = errors => ({
   type: RECEIVE_TASK_ERRORS,
