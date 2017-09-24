@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
       email: '',
       first_name: '',
       last_name: ''};
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
     this.update = this.update.bind(this);
@@ -21,7 +22,6 @@ class SessionForm extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (this.props.location.pathname !== newProps.location.pathname) {
-      console.log(this.props);
       this.props.clearErrors();
     }
   }

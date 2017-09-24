@@ -20,9 +20,7 @@ const TaskIndexItem = ({ task }) => {
       <Link to={`/tasks/${task.id}`}>
         <span>{task.title}</span>
           &nbsp;
-          <span>{dayOfWeek}</span>
-          &nbsp;
-          <span>{task.due}</span>
+          <span>{dayOfWeek + " " + task.due}</span>
       </Link>
     </li>
   );
