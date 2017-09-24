@@ -14,12 +14,16 @@ class TasksIndex extends Component {
 
   componentWillMount() {
     this.props.requestAllTasks();
+
   }
 
   handleNewTask(e) {
     e.preventDefault();
     const state = Object.assign({},this.state);
     this.props.createTask(state);
+    this.setState({
+      title: ''
+    });
   }
 
   updateState(field) {
@@ -30,7 +34,6 @@ class TasksIndex extends Component {
 
   render () {
     const { tasks } = this.props;
-    console.log(this.state);
     return (
       <section>
         <form onSubmit={this.handleNewTask}>
