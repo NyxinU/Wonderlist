@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 
 const TaskIndexItem = ({ task, callBackFromParent }) => {
   var weekday=new Array(7);
-  weekday[0]="Mon";
-  weekday[1]="Tues";
-  weekday[2]="Wed";
-  weekday[3]="Thur";
-  weekday[4]="Fri";
-  weekday[5]="Sat";
-  weekday[6]="Sun";
+  weekday[0]="Sun";
+  weekday[1]="Mon";
+  weekday[2]="Tues";
+  weekday[3]="Wed";
+  weekday[4]="Thur";
+  weekday[5]="Fri";
+  weekday[6]="Sat";
+
 
   const dueDate = new Date(task.due);
   const day = weekday[dueDate.getUTCDay()];
