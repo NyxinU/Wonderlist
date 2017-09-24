@@ -10,7 +10,7 @@ class TasksIndex extends Component {
       title: ''
     };
     this.handleNewTask = this.handleNewTask.bind(this);
-    this.myCallBack = this.myCallBack.bind(this);
+    this.getStateFromChild = this.getStateFromChild.bind(this);
   }
 
   componentWillMount() {
@@ -26,7 +26,7 @@ class TasksIndex extends Component {
     });
   }
 
-  myCallBack (dataFromChild) {
+  getStateFromChild (dataFromChild) {
     this.props.updateTask(dataFromChild);
   }
 
@@ -50,7 +50,7 @@ class TasksIndex extends Component {
             />
         </form>
         <ul>
-          {tasks.map(task => <TaskIndexItem key={task.id} task={task} callBackFromParent={this.myCallBack} />)}
+          {tasks.map(task => <TaskIndexItem key={task.id} task={task} callBackFromParent={this.getStateFromChild} />)}
         </ul>
         <Route path='/tasks/:taskId' component={TaskDetailContainer} />
       </section>

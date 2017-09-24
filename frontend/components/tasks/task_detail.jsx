@@ -65,7 +65,6 @@ class TaskDetail extends React.Component {
 
     return (
       <form onSubmit={this.updateDb}>
-        <Link to="/tasks">close x</Link>
         <input
           type="text"
           value={title}
@@ -88,6 +87,7 @@ class TaskDetail extends React.Component {
         <input
           type="submit"
           value={"Update Task"} />
+        <Link to="/tasks">close x</Link>
         <button onClick={this.handleDeleteTask} >
           Delete Task
         </button>

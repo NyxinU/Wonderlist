@@ -37,7 +37,9 @@ const TaskIndexItem = ({ task, callBackFromParent }) => {
         &nbsp;
         <span>{task.due ? fulldate : ""}</span>
       </Link>
-      <span>{`${task.completed}`}</span>
+      <label>Completed:
+      <span>{` ${task.completed}`}</span>
+      </label>
     </li>
   );
 };
