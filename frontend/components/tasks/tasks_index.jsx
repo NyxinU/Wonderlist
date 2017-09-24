@@ -39,13 +39,17 @@ class TasksIndex extends Component {
   render () {
     const { tasks } = this.props;
     return (
-      <section>
+      <section className="task-index">
+        <header> Welcome User with dropdown to logout and search bar </header>
+        <nav>List Index will go here</nav>
         <form onSubmit={this.handleNewTask}>
-          <input type="text"
+          <input
+            type="text"
             value={this.state.title}
             onChange={this.updateState("title")}
             />
-          <input type="submit"
+          <input
+            type="submit"
             value={"createTask"}
             />
         </form>

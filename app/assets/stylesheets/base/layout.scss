@@ -144,3 +144,40 @@ body {
 .homepage-quote > sub {
 	font-family: 'Architects Daughter', cursive;
 }
+
+
+// task page
+.task-index {
+	display: grid;
+	grid-template-columns: 1fr 3fr 2fr;
+	grid-template-areas:
+	 	"header header header"
+		"nav 		form 	 aside"
+		"nav    ul     aside";
+
+
+	header {
+		grid-area: header;
+	}
+
+	nav {
+		grid-area: nav;
+	}
+
+	form {
+		grid-area: form;
+	}
+
+	ul {
+		grid-area: ul;
+		padding-left: 0px
+	}
+
+	aside {
+		grid-area: aside;
+	}
+
+	li {
+		list-style-type: none;
+	}
+}

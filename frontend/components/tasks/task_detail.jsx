@@ -64,34 +64,36 @@ class TaskDetail extends React.Component {
     const day = weekday[dueDate.getUTCDay()];
 
     return (
-      <form onSubmit={this.updateDb}>
-        <input
-          type="text"
-          value={title}
-          onChange={this.updateState("title")}
-          />
-        <label>Due: {day}
-        <input
-          type="date"
-          value={due ? due : ""}
-          onChange={this.updateState("due")}
-          />
-        </label>
-        <label>Reward:
-        <input
-          type="text"
-          value={reward ? reward : ""}
-          onChange={this.updateState("reward")}
-          />
-        </label>
-        <input
-          type="submit"
-          value={"Update Task"} />
-        <Link to="/tasks">close x</Link>
-        <button onClick={this.handleDeleteTask} >
-          Delete Task
-        </button>
-      </form>
+      <aside>
+        <form onSubmit={this.updateDb}>
+          <input
+            type="text"
+            value={title}
+            onChange={this.updateState("title")}
+            />
+          <label>Due: {day}
+          <input
+            type="date"
+            value={due ? due : ""}
+            onChange={this.updateState("due")}
+            />
+          </label>
+          <label>Reward:
+          <input
+            type="text"
+            value={reward ? reward : ""}
+            onChange={this.updateState("reward")}
+            />
+          </label>
+          <input
+            type="submit"
+            value={"Update Task"} />
+          <Link to="/tasks">close x</Link>
+          <button onClick={this.handleDeleteTask} >
+            Delete Task
+          </button>
+        </form>
+      </aside>
     );
   }
 }
