@@ -32,21 +32,6 @@ body {
 	text-decoration: none;
 }
 
-.btn {
-	margin-bottom: 0;
-	font-weight: 700;
-	text-align: center;
-	vertical-align: middle;
-	cursor: pointer;
-	background-image: none;
-	border: 1px solid transparent;
-	white-space: nowrap;
-	padding: 6px 12px;
-
-	line-height: 1.42857143;
-	border-radius: 3px;
-}
-
 .session-form-container {
 	width: 100%;
 	display: flex;
@@ -150,11 +135,13 @@ body {
 .task-index {
 	display: grid;
 	grid-template-columns: 1fr 3fr 2fr;
+	grid-template-rows : 1fr 1fr 98fr;
 	grid-template-areas:
 	 	"header header header"
 		"nav 		form 	 aside"
 		"nav    ul     aside";
 
+	background-image:url(https://www.pixelstalk.net/wp-content/uploads/2016/06/Free-Photos-Light-Blue-Backgrounds.jpg);
 
 	header {
 		grid-area: header;
@@ -178,6 +165,19 @@ body {
 	}
 
 	li {
-		list-style-type: none;
+		background: #fff;
+		list-style: none;
+		height: 46px;
+		border-radius: 3px;
+		margin-bottom: 2px;
+	}
+
+	.task-index-link {
+		text-decoration: none;
+	}
+
+	input {
+		border: 1px	solid	black;
+		border-radius: 3px;
 	}
 }

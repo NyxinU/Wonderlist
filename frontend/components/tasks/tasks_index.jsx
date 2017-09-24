@@ -50,7 +50,7 @@ class TasksIndex extends Component {
             />
           <input
             type="submit"
-            value={"createTask"}
+            value={"Add Task"}
             />
         </form>
         <ul>
