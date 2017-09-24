@@ -8,24 +8,55 @@
 
 User.destroy_all
 
-User.create!(
-    username: 'invisibleman',
-    password: 'teddywinters',
-    email: 'Invisman@gmail.com',
-    first_name: 'Ivan',
-    last_name: 'Bliminse'
-  )
+user = User.create (
+  [
+    {
+      username: 'invisibleman',
+      password: 'teddywinters',
+      email: 'Invisman@gmail.com',
+      first_name: 'Ivan',
+      last_name: 'Bliminse'
+    },
+    {
+      username: 'nyxin',
+      password: '12345678',
+      email: 'nyxin@gmail.com',
+      first_name: 'Nixon',
+      last_name: 'Yiu'
+    },
+  ]
+)
+
 
 Task.destroy_all
 
-Task.create!(
-  title: 'be awesome',
-  due: "2017-09-22",
-  reward: "awesomeness"
- )
+task = Task.create(
+  [
+    {
+      title: 'be awesome',
+      due: Date.parse("01/01/2018"),
+      reward: "awesomeness"
+    },
+    {
+      title: 'learn latin',
+      due: Date.parse("30/09/2018"),
+      reward: "get vanilla ice cream"
+    },
+    {
+      title: 'finish full stack',
+      due: Date.parse("29/09/2017"),
+      reward: "start on javascript project"
+    },
+    {
+      title: 'finish Js project',
+      due: Date.parse("05/10/2017"),
+      reward: "start on flex project"
+    },
+    {
 
-Task.create!(
-  title: 'learn latin',
-  due: "2017-09-25",
-  reward: "get vanilla ice cream"
- )
+      title: 'finish flex project',
+      due: Date.parse("19/10/2017"),
+      reward: "study algorithms"
+    },
+  ]
+)

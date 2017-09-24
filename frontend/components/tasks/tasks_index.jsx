@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import TaskIndexItem from './task_index_item';
 
 class TasksIndex extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class TasksIndex extends Component {
 
     return (
       <ul>
-        {tasks.map(task => <li>{task.title}</li>)}
+        {tasks.map(task => <TaskIndexItem key={task.id} task={task} />)}
       </ul>
     );
   }
