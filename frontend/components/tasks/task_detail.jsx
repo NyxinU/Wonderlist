@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, withRouter } from 'react-router-dom';
+import { Route, withRouter, Link } from 'react-router-dom';
 
 
 class TaskDetail extends React.Component {
@@ -8,9 +8,10 @@ class TaskDetail extends React.Component {
     if (this.props.task) {
       this.state = this.props.task;
     }else {
-      this.state = { x: "hello"};
+      this.state = {};
     }
-    this.update = this.update.bind(this);
+    this.updateState = this.updateState.bind(this);
+    this.updateDb = this.updateDb.bind(this);
     }
   componentWillMount() {
     this.props.requestTask(this.props.match.params.taskId);
@@ -20,21 +21,29 @@ class TaskDetail extends React.Component {
     if (this.props.match.params.taskId !== newProps.match.params.taskId) {
       this.props.requestTask(newProps.match.params.taskId);
     }
+    if (newProps.task) {
+      this.setState(newProps.task);
+    }
   }
 
-  update(field) {
+  updateState(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  updateDb(e) {
+    e.preventDefault();
+    const state = Object.assign({},this.state);
+    this.props.updateTask(state);
   }
 
   render () {
     if (!this.props.task) {
       return <div />;
     }
-    const { id, title, due, reward, completed } = this.props.task;
     console.log(this.props);
-    console.log(this.state);
+    const { id, title, due, reward, completed } = this.state;
     const dueDate = new Date(due);
     var weekday=new Array(7);
     weekday[0]="Mon";
@@ -43,20 +52,31 @@ class TaskDetail extends React.Component {
     weekday[3]="Thur";
     weekday[4]="Fri";
     weekday[5]="Sat";
-    weekday[6]="Sunday";
+    weekday[6]="Sun";
     let dayOfWeek = weekday[dueDate.getDay()];
 
     return (
-      <div>
-        <form>
+        <form onSubmit={this.updateDb}>
+          <Link to="/tasks">close x</Link>
           <input type="text"
             value={title}
-            onChange={this}
+            onChange={this.updateState("title")}
             />
-          <div>{dayOfWeek + " " + due}</div>
-          <div>{reward}</div>
+          <label>Due:
+          <input type="date"
+            value={due}
+            onChange={this.updateState("due")}
+            />
+          </label>
+          <label>Reward:
+          <input type="text"
+            value={reward}
+            onChange={this.updateState("reward")}
+            />
+          </label>
+          <input type="submit"
+            value={"updateTask"} />
         </form>
-      </div>
     );
   }
 

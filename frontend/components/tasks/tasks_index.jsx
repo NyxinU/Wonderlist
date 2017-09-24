@@ -6,10 +6,18 @@ import TaskDetailContainer from './task_detail_container';
 class TasksIndex extends Component {
   constructor(props) {
     super(props);
+
+    this.updateDb = this.updateDb.bind(this);
   }
 
   componentWillMount() {
     this.props.requestAllTasks();
+  }
+
+  updateDb(e) {
+    e.preventDefault();
+    const state = Object.assign({},this.state);
+    this.props.updateTask(state);
   }
 
   render () {
