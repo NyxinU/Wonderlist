@@ -5,6 +5,7 @@ import { Route, withRouter, Link } from 'react-router-dom';
 class TaskDetail extends React.Component {
   constructor(props) {
     super(props);
+
     if (this.props.task) {
       this.state = this.props.task;
     }else {
@@ -43,7 +44,6 @@ class TaskDetail extends React.Component {
       return <div />;
     }
     const { id, title, due, reward, completed } = this.state;
-    const dueDate = new Date(due);
     var weekday=new Array(7);
     weekday[0]="Mon";
     weekday[1]="Tues";
@@ -51,8 +51,9 @@ class TaskDetail extends React.Component {
     weekday[3]="Thur";
     weekday[4]="Fri";
     weekday[5]="Sat";
-    weekday[6]="Sun";
-    let dayOfWeek = weekday[dueDate.getDay()];
+    weekday[6]="Sunday";
+    const dueDate = new Date(due);
+    const day = weekday[dueDate.getUTCDay()];
 
     return (
         <form onSubmit={this.updateDb}>
@@ -61,15 +62,15 @@ class TaskDetail extends React.Component {
             value={title}
             onChange={this.updateState("title")}
             />
-          <label>Due:
+          <label>Due: {day}
           <input type="date"
-            value={due}
+            value={due ? due : ""}
             onChange={this.updateState("due")}
             />
           </label>
           <label>Reward:
           <input type="text"
-            value={reward}
+            value={reward ? reward : ""}
             onChange={this.updateState("reward")}
             />
           </label>

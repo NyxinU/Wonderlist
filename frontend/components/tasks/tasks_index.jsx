@@ -14,7 +14,6 @@ class TasksIndex extends Component {
 
   componentWillMount() {
     this.props.requestAllTasks();
-
   }
 
   handleNewTask(e) {
