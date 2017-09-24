@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import TaskDetail from './task_detail';
-import { requestTask } from '../../actions/task_actions';
+import { requestTask, updateTask } from '../../actions/task_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const task = state.entities.tasks[ownProps.match.params.taskId];
@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch =>({
-  requestTask: id => dispatch(requestTask(id))
+  requestTask: id => dispatch(requestTask(id)),
+  updateTask: task => dispatch(updateTask(task))
 });
 
 export default connect(

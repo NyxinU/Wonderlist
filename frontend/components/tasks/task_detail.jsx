@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
+
 
 class TaskDetail extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      id: '',
-      title: '',
-      due: '',
-      reward: '',
-      completed: false
-    };
-
+    if (this.props.task) {
+      this.state = this.props.task;
+    }else {
+      this.state = { x: "hello"};
+    }
     this.update = this.update.bind(this);
     }
   componentWillMount() {
@@ -30,14 +28,13 @@ class TaskDetail extends React.Component {
     });
   }
 
-
-
   render () {
     if (!this.props.task) {
       return <div />;
     }
     const { id, title, due, reward, completed } = this.props.task;
-
+    console.log(this.props);
+    console.log(this.state);
     const dueDate = new Date(due);
     var weekday=new Array(7);
     weekday[0]="Mon";
@@ -51,18 +48,18 @@ class TaskDetail extends React.Component {
 
     return (
       <div>
-        <section>
+        <form>
           <input type="text"
-            value={this.state.title}
-            onChange={this.update('title')}
+            value={title}
+            onChange={this}
             />
           <div>{dayOfWeek + " " + due}</div>
           <div>{reward}</div>
-        </section>
+        </form>
       </div>
     );
   }
 
 }
 
-export default TaskDetail;
+export default withRouter (TaskDetail);
