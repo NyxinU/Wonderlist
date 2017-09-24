@@ -10,11 +10,11 @@ const TaskIndexItem = ({ task, callBackFromParent }) => {
   weekday[3]="Thur";
   weekday[4]="Fri";
   weekday[5]="Sat";
-  weekday[6]="Sunday";
+  weekday[6]="Sun";
 
   const dueDate = new Date(task.due);
   const day = weekday[dueDate.getUTCDay()];
-  const month = dueDate.getUTCMonth();
+  const month = dueDate.getUTCMonth() + 1;
   const date = dueDate.getUTCDate();
   const year = dueDate.getUTCFullYear();
   const fulldate = `${day} ${month}/${date}/${year}`;

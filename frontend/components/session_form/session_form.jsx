@@ -90,21 +90,24 @@ class SessionForm extends React.Component {
         <div>Been here before? Welcome Back!</div>
         {this.renderErrors()}
         <div className="session-form">
-            <input type="text"
+            <input
+              type="text"
               value={this.state.username}
               onChange={this.update('username')}
               className = "session-form-input"
               placeholder="Username"
               />
           <br/>
-            <input type="password"
+            <input
+              type="password"
                value={this.state.password}
                onChange={this.update('password')}
                className="session-form-input"
                placeholder="Password"
               />
           <br/>
-          <input type="submit"
+          <input
+            type="submit"
             className="session-create-button"
             value={"Log in"} />
           <br/>
@@ -122,42 +125,48 @@ class SessionForm extends React.Component {
         <div>Sign up for free.</div>
         {this.renderErrors()}
           <div className="session-form">
-            <input type="text"
+            <input
+              type="text"
               value={this.state.first_name}
               onChange={this.update('first_name')}
               className = "session-form-input"
               placeholder="First Name"
               />
           <br/>
-            <input type="text"
+            <input
+              type="text"
               value={this.state.last_name}
               onChange={this.update('last_name')}
               className = "session-form-input"
               placeholder="Last Name"
               />
           <br/>
-            <input type="text"
+            <input
+              type="text"
               value={this.state.email}
               onChange={this.update('email')}
               className = "session-form-input"
               placeholder="Email"
               />
           <br/>
-            <input type="text"
+            <input
+              type="text"
               value={this.state.username}
               onChange={this.update('username')}
               className = "session-form-input"
               placeholder="Username"
               />
           <br/>
-            <input type="password"
+            <input
+              type="password"
                value={this.state.password}
                onChange={this.update('password')}
                className="session-form-input"
                placeholder="Password"
               />
           <br/>
-          <input type="submit"
+          <input
+            type="submit"
             className="session-create-button"
             value={"Sign up"} />
           <br/>

@@ -20,7 +20,7 @@ class TasksIndex extends Component {
   handleNewTask(e) {
     e.preventDefault();
     const state = Object.assign({},this.state);
-    this.props.createTask(state);
+    this.props.createTask(this.state);
     this.setState({
       title: ''
     });

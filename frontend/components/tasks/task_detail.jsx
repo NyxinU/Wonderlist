@@ -13,7 +13,9 @@ class TaskDetail extends React.Component {
     }
     this.updateState = this.updateState.bind(this);
     this.updateDb = this.updateDb.bind(this);
-    }
+    this.handleDeleteTask = this.handleDeleteTask.bind(this);
+  }
+
   componentWillMount() {
     this.props.requestTask(this.props.match.params.taskId);
   }
@@ -39,6 +41,12 @@ class TaskDetail extends React.Component {
     this.props.updateTask(state);
   }
 
+  handleDeleteTask(e) {
+    e.preventDefault();
+    const state = Object.assign({},this.state);
+    this.props.deleteTask(state.id);
+  }
+
   render () {
     if (!this.props.task) {
       return <div />;
@@ -51,35 +59,41 @@ class TaskDetail extends React.Component {
     weekday[3]="Thur";
     weekday[4]="Fri";
     weekday[5]="Sat";
-    weekday[6]="Sunday";
+    weekday[6]="Sun";
     const dueDate = new Date(due);
     const day = weekday[dueDate.getUTCDay()];
 
     return (
-        <form onSubmit={this.updateDb}>
-          <Link to="/tasks">close x</Link>
-          <input type="text"
-            value={title}
-            onChange={this.updateState("title")}
-            />
-          <label>Due: {day}
-          <input type="date"
-            value={due ? due : ""}
-            onChange={this.updateState("due")}
-            />
-          </label>
-          <label>Reward:
-          <input type="text"
-            value={reward ? reward : ""}
-            onChange={this.updateState("reward")}
-            />
-          </label>
-          <input type="submit"
-            value={"updateTask"} />
-        </form>
+      <form onSubmit={this.updateDb}>
+        <Link to="/tasks">close x</Link>
+        <input
+          type="text"
+          value={title}
+          onChange={this.updateState("title")}
+          />
+        <label>Due: {day}
+        <input
+          type="date"
+          value={due ? due : ""}
+          onChange={this.updateState("due")}
+          />
+        </label>
+        <label>Reward:
+        <input
+          type="text"
+          value={reward ? reward : ""}
+          onChange={this.updateState("reward")}
+          />
+        </label>
+        <input
+          type="submit"
+          value={"Update Task"} />
+        <button onClick={this.handleDeleteTask} >
+          Delete Task
+        </button>
+      </form>
     );
   }
-
 }
 
 export default withRouter (TaskDetail);
