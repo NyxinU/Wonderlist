@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import TasksIndex from './tasks_index';
-import { requestAllTasks, updateTask } from '../../actions/task_actions';
+import { requestAllTasks, updateTask, createTask } from '../../actions/task_actions';
 import { asArray } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
@@ -10,7 +10,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   requestAllTasks: () => dispatch(requestAllTasks()),
-    updateTask: task => dispatch(updateTask(task))
+  updateTask: task => dispatch(updateTask(task)),
+  createTask: task => dispatch(createTask(task))
 });
 
 export default connect(

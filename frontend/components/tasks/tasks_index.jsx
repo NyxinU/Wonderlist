@@ -6,25 +6,42 @@ import TaskDetailContainer from './task_detail_container';
 class TasksIndex extends Component {
   constructor(props) {
     super(props);
-
-    this.updateDb = this.updateDb.bind(this);
+    this.state = {
+      title: ''
+    };
+    this.handleNewTask = this.handleNewTask.bind(this);
   }
 
   componentWillMount() {
     this.props.requestAllTasks();
   }
 
-  updateDb(e) {
+  handleNewTask(e) {
     e.preventDefault();
     const state = Object.assign({},this.state);
-    this.props.updateTask(state);
+    this.props.createTask(state);
+  }
+
+  updateState(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
   }
 
   render () {
     const { tasks } = this.props;
-
+    console.log(this.state);
     return (
       <section>
+        <form onSubmit={this.handleNewTask}>
+          <input type="text"
+            value={this.state.title}
+            onChange={this.updateState("title")}
+            />
+          <input type="submit"
+            value={"createTask"}
+            />
+        </form>
         <ul>
           {tasks.map(task => <TaskIndexItem key={task.id} task={task} />)}
         </ul>

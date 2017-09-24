@@ -42,7 +42,6 @@ class TaskDetail extends React.Component {
     if (!this.props.task) {
       return <div />;
     }
-    console.log(this.props);
     const { id, title, due, reward, completed } = this.state;
     const dueDate = new Date(due);
     var weekday=new Array(7);

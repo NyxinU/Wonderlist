@@ -3,16 +3,16 @@ import { Link } from 'react-router-dom';
 
 
 const TaskIndexItem = ({ task }) => {
-  const dueDate = new Date(task.due);
-  var weekday=new Array(7);
-  weekday[0]="Mon";
-  weekday[1]="Tues";
-  weekday[2]="Wed";
-  weekday[3]="Thur";
-  weekday[4]="Fri";
-  weekday[5]="Sat";
-  weekday[6]="Sunday";
-  let dayOfWeek = weekday[dueDate.getDay()];
+  // const dueDate = new Date(task.due);
+  // var weekday=new Array(7);
+  // weekday[0]="Mon";
+  // weekday[1]="Tues";
+  // weekday[2]="Wed";
+  // weekday[3]="Thur";
+  // weekday[4]="Fri";
+  // weekday[5]="Sat";
+  // weekday[6]="Sunday";
+  // let dayOfWeek = weekday[dueDate.getDay()];
 
   return (
     <li>
@@ -20,7 +20,7 @@ const TaskIndexItem = ({ task }) => {
       <Link to={`/tasks/${task.id}`}>
         <span>{task.title}</span>
           &nbsp;
-          <span>{dayOfWeek + " " + task.due}</span>
+          <span>{task.due ? task.due : ""}</span>
       </Link>
     </li>
   );
