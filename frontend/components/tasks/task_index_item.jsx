@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const TaskIndexItem = ({ task }) => {
+const TaskIndexItem = ({ task, callBackFromParent }) => {
   var weekday=new Array(7);
   weekday[0]="Mon";
   weekday[1]="Tues";
@@ -19,14 +19,24 @@ const TaskIndexItem = ({ task }) => {
   const year = dueDate.getUTCFullYear();
   const fulldate = `${day} ${month}/${date}/${year}`;
 
+  const giveStateToParent = () => {
+    const newState = Object.assign({}, task);
+    newState.completed = !newState.completed;
+    callBackFromParent(newState);
+  };
+
   return (
     <li>
-      <input type="checkbox"/>
-      <Link to={`/tasks/${task.id}`}>
+      <input
+        type="checkbox"
+        onChange={giveStateToParent} />
+      <Link
+        to={`/tasks/${task.id}`}>
         <span>{task.title}</span>
-          &nbsp;
-          <span>{task.due ? fulldate : ""}</span>
+        &nbsp;
+        <span>{task.due ? fulldate : ""}</span>
       </Link>
+      <span>{`${task.completed}`}</span>
     </li>
   );
 };
