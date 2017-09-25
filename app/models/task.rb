@@ -10,11 +10,13 @@
 #  completed  :boolean          default(FALSE), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id  :integer
 #
 
 class Task < ApplicationRecord
-  validates :title, presence: true
+  validates :title, :user_id, presence: true
   validates :completed, inclusion: { in: [true, false] }
 
-  belongs_to :list
+  belongs_to :user
+  belongs_to :list, optional: true 
 end

@@ -34,6 +34,9 @@ class User < ApplicationRecord
              length: { minimum: 8 },
              allow_nil: true
 
+  has_many :lists
+  has_many :tasks
+
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(username, password)

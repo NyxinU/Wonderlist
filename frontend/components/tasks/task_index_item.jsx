@@ -31,9 +31,13 @@ const TaskIndexItem = ({ task, callBackFromParent }) => {
       className="task-index-link">
       <li>
         <span>
-          <input
+          {task.completed ? <input
             type="checkbox"
-            onChange={giveStateToParent} />
+            onChange={giveStateToParent} checked/> :
+            <input
+              type="checkbox"
+              onChange={giveStateToParent} />}
+
           <span>{task.title}</span>
         </span>
         <span>{task.due ? fulldate : ""}</span>

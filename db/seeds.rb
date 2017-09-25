@@ -8,60 +8,41 @@
 
 User.destroy_all
 
-user = User.create (
-  [
-    {
-      username: 'invisibleman',
-      password: 'teddywinters',
-      email: 'Invisman@gmail.com',
-      first_name: 'Ivan',
-      last_name: 'Bliminse'
-    },
-    {
-      username: 'nyxin',
-      password: '12345678',
-      email: 'nyxin@gmail.com',
-      first_name: 'Nixon',
-      last_name: 'Yiu'
-    },
-  ]
-)
+user1 = User.create ({
+  username: 'invisibleman',
+  password: 'teddywinters',
+  email: 'Invisman@gmail.com',
+  first_name: 'Ivan',
+  last_name: 'Bliminse'
+})
 
+user2 = User.create ({
+  username: 'nyxin',
+  password: '12345678',
+  email: 'nyxin@gmail.com',
+  first_name: 'Nixon',
+  last_name: 'Yiu'
+})
+
+List.destroy_all
+
+list1 = List.create!({
+  title: "App Academy",
+  user_id: user1.id
+})
 
 Task.destroy_all
 
-task = Task.create(
-  [
-    {
-      title: 'be awesome',
-      due: Date.parse("01/01/2018"),
-      reward: "awesomeness"
-    },
-    {
-      title: 'learn latin',
-      due: Date.parse("30/09/2018"),
-      reward: "get vanilla ice cream"
-    },
-    {
-      title: 'finish full stack',
-      due: Date.parse("29/09/2017"),
-      reward: "start on javascript project"
-    },
-    {
-      title: 'finish Js project',
-      due: Date.parse("05/10/2017"),
-      reward: "start on flex project"
-    },
-    {
+task1 = Task.create!({
+  title: 'be awesome',
+  user_id: user1.id,
+  due: Date.parse("01/01/2018"),
+  reward: "awesomeness"
+})
 
-      title: 'finish flex project',
-      due: Date.parse("19/10/2017"),
-      reward: "study algorithms"
-    },
-    {
-      title: 'sleep',
-      due: Date.parse("20/10/2017"),
-      reward: "you get to sleep, what more do you want?"
-    },
-  ]
-)
+task2 = Task.create!({
+  title: 'Finish full stack project',
+  user_id: user1.id,
+  due: Date.parse("20/09/2018"),
+  reward: "start JS project"
+})

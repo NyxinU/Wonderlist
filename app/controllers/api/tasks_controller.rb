@@ -1,6 +1,6 @@
 class Api::TasksController < ApplicationController
   def index
-    @task = Task.all
+    @tasks = Task.all
     render :index
   end
 
@@ -50,7 +50,7 @@ class Api::TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :list_id, :due, :reward, :completed)
+    params.require(:task).permit(:title, :list_id, :due, :reward, :completed, :user_id)
   end
 
 end
