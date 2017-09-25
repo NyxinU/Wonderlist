@@ -1,6 +1,7 @@
 class Api::TasksController < ApplicationController
   def index
     @task = Task.all
+    render :index
   end
 
   def show
@@ -23,6 +24,16 @@ class Api::TasksController < ApplicationController
     end
   end
 
+  def update
+    @task = Task.find(params[:id])
+
+    if @task.update(task_params)
+      render :show
+    else
+      render json: @task.errors.full_messages, status: 422
+    end
+  end
+
   def destroy
     @task = Task.find(params[:id])
 
@@ -34,18 +45,7 @@ class Api::TasksController < ApplicationController
     end
   end
 
-  def update
-    @task = Task.find(params[:id])
-    # unless @task
-    #   render json: ["Task does not exist"], status: 404
-    # end
 
-    if @task.update(task_params)
-      render :show
-    else
-      render json: @task.errors.full_messages, status: 422
-    end
-  end
 
   private
 
