@@ -9,7 +9,7 @@ import TaskDetailContainer from './tasks/task_detail_container';
 
 
 const App = () => (
-  <div className="whole-page">
+  <div className="wrapper">
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />

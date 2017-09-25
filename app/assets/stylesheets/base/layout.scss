@@ -8,17 +8,8 @@ body {
 	padding: 0;
 }
 
-.homepage {
-	background-color: #bfdce8;
-	height: 100vh;
-}
-
-.login-signout {
-	display: flex;
-	justify-content: flex-end;
-}
-
 .btn-info {
+	float: right;
 	margin-right: 10%;
 	margin-top: 25px;
 	margin-bottom: 130px;
@@ -79,58 +70,58 @@ body {
 	background-color: rgba(#0060bf, 0.15)
 }
 
-.nav-links {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 5px;
-	cursor: pointer
-}
-.nav-title {
-	display: inline-block;
-	font-size: 37px;
-	font-family: 'Architects Daughter', cursive;
-	font-weight: bolder;
-	margin-left: 5%;
-	color: #000000;
-}
+// homepage
 
+.homepage {
+	display:grid;
+	grid-template-rows: 1fr 5fr 1fr;
+	grid-template-areas:
+	 	"header"
+		"img"
+		"div";
+	background-color: #bfdce8;
+	padding-bottom: 143px;
 
+	header {
+		grid-area: header;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
 
-.nav-login-logout {
-	display: inline-block;
-	margin-top: 13px;
-	margin-right: 3%;
-	cursor: pointer
-}
+	h1 {
+		display: inline-block;
+		font-size: 35px;
+		font-family: 'Permanent Marker', cursive;
+		margin: 0;
+		margin-left: 10%;
 
-.nav-login-logout > a {
-	color: black;
-	text-decoration: none;
-	margin: 3px;
-	cursor: pointer
-}
+	}
 
-.img {
-  min-width: 100%;
-}
+	nav {
+		grid-area: nav;
+		display: inline-block;
+		margin-right: 10%;
+	}
 
-.homepage-break-message {
-	display: flex;
-	justify-content: center;
-	font-size: 30px;
-	font-family: 'Architects Daughter', cursive;
-	font-weight: bolder;
-}
+	img {
+		grid-area: img;
+		height: 100%;
+		margin:auto;
+	}
 
-.homepage-quote {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	font-size: 20px;
-}
+	div {
+		grid-area: div;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
 
-.homepage-quote > sub {
-	font-family: 'Architects Daughter', cursive;
+	h2, a, sub {
+		font-family: 'Permanent Marker', cursive;
+		color: black;
+		text-decoration: none;
+	}
 }
 
 
