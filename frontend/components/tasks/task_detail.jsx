@@ -72,6 +72,7 @@ class TaskDetail extends React.Component {
             value={title}
             onChange={this.updateState("title")}
             />
+          <hr/>
           <label>Due: {day}
           <input
             type="date"

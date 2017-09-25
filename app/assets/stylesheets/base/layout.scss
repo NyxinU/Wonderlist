@@ -158,6 +158,13 @@ body {
 
 	form {
 		grid-area: form;
+
+		hr {
+			width: 95%;
+			margin: 0;
+			margin-bottom: 7px;
+			margin-left: 2.5%;
+		}
 	}
 
 	ul {
@@ -176,9 +183,10 @@ body {
 		.task-detail-title {
 			width: 100%;
 			font-weight: bold;
-			font-size: 35px;
-			padding-top: 12px;
-			margin-bottom: 12px;
+			font-size: 30px;
+			padding-top: 15px;
+			margin-left: 5px;
+			margin-bottom: 5px;
 		}
 
 		label {
@@ -213,7 +221,7 @@ body {
 		}
 
 		a {
-			position:absolute; bottom: 21px;
+			position:absolute; bottom: 22px;
 			margin-left: 12px;
 			border-radius: 4px;
 			cursor: pointer;
@@ -232,6 +240,10 @@ body {
 			color: azure;
 			background:#49b3f4;
 			border: none;
+		}
+
+		button:hover, a:hover, .update-task:hover {
+			background-color:#3ea3df;
 		}
 	}
 
