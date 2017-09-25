@@ -43,13 +43,15 @@ class TasksIndex extends Component {
         <header> Welcome User with dropdown to logout and search bar </header>
         <nav>List Index will go here</nav>
         <form onSubmit={this.handleNewTask}>
-          <input
-            type="text"
-            className="add-task-input"
-            value={this.state.title}
-            onChange={this.updateState("title")}
-            placeholder={"Add a task..."}
-            />
+          <div>
+            <input
+              type="text"
+              className="add-task-input"
+              value={this.state.title}
+              onChange={this.updateState("title")}
+              placeholder={"Add a task..."}
+              />
+          </div>
           <noscript>
           <input
             type="submit"
