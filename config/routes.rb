@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-  namespace :api, defaults: {format: :json} do
+  namespace :api, defaults: { format: :json } do
     resource :users, only: %i(create)
     resource :session, only: %i(create destroy show)
     resources :tasks, except: %i(new)
+    resources :lists, except: %i(new)
   end
 
   root "static_pages#root"
