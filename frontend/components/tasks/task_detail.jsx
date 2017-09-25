@@ -64,9 +64,10 @@ class TaskDetail extends React.Component {
     const day = weekday[dueDate.getUTCDay()];
 
     return (
-      <aside>
+      <aside className="task-detail">
         <form onSubmit={this.updateDb}>
           <input
+            className={"task-detail-title"}
             type="text"
             value={title}
             onChange={this.updateState("title")}
@@ -85,13 +86,16 @@ class TaskDetail extends React.Component {
             onChange={this.updateState("reward")}
             />
           </label>
-          <input
-            type="submit"
-            value={"Update Task"} />
-          <Link to="/tasks">close x</Link>
-          <button onClick={this.handleDeleteTask} >
-            Delete Task
-          </button>
+            <input
+              className="update-task"
+              type="submit"
+              value={"Update Task"} />
+          <div>
+            <Link to="/tasks">close x</Link>
+            <button onClick={this.handleDeleteTask} >
+              Delete Task
+            </button>
+          </div>
         </form>
       </aside>
     );

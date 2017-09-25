@@ -45,13 +45,17 @@ class TasksIndex extends Component {
         <form onSubmit={this.handleNewTask}>
           <input
             type="text"
+            className="add-task-input"
             value={this.state.title}
             onChange={this.updateState("title")}
+            placeholder={"Add a task..."}
             />
+          <noscript>
           <input
             type="submit"
             value={"Add Task"}
             />
+          </noscript>
         </form>
         <ul>
           {tasks.map(task => <TaskIndexItem key={task.id} task={task} callBackFromParent={this.getStateFromChild} />)}

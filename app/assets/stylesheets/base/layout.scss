@@ -30,6 +30,7 @@ body {
 	color: rgba(0, 0, 0, 0.5);
 	text-align: center;
 	text-decoration: none;
+	cursor: pointer
 }
 
 .session-form-container {
@@ -63,11 +64,10 @@ body {
 
 .session-create-button, .input[type=submit], .session-delete-button {
 	height: 36px;
-	color: #ffffff;
+	color: azure;
 	background:#49b3f4;
 	border:0 none;
 	cursor:pointer;
-	-webkit-border-radius: 5px;
 	border-radius: 5px;
 }
 
@@ -83,6 +83,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 5px;
+	cursor: pointer
 }
 .nav-title {
 	display: inline-block;
@@ -99,12 +100,14 @@ body {
 	display: inline-block;
 	margin-top: 13px;
 	margin-right: 3%;
+	cursor: pointer
 }
 
 .nav-login-logout > a {
 	color: black;
 	text-decoration: none;
 	margin: 3px;
+	cursor: pointer
 }
 
 .img {
@@ -135,7 +138,9 @@ body {
 .task-index {
 	display: grid;
 	grid-template-columns: 1fr 3fr 2fr;
-	grid-template-rows : 1fr 1fr 98fr;
+	grid-template-rows: 1fr 1fr 17.98fr;
+	grid-gap: .6rem;
+
 	grid-template-areas:
 	 	"header header header"
 		"nav 		form 	 aside"
@@ -162,22 +167,90 @@ body {
 
 	aside {
 		grid-area: aside;
+		background: azure;
+		border: none;
+		border-radius: 4px;
+		margin-right: 12px;
+		margin-bottom: 12px;
+
+		.task-detail-title {
+			width: 100%;
+			font-weight: bold;
+			font-size: 35px;
+		}
+
+		label {
+			display: flex;
+			align-items: flex-start;
+		}
+
+		.update-task {
+			border-radius: 4px;
+			cursor: pointer;
+			color: azure;
+			background:#49b3f4;
+			border: none;
+			width: 90%;
+		}
+
+		input[type="submit"] {
+			width: 100%
+		}
+
+		a {
+			position:absolute; bottom: 22px;
+			margin-left: 12px;
+			border-radius: 4px;
+			cursor: pointer;
+			color: azure;
+			background:#49b3f4;
+			border: none;
+		}
+
+		button {
+			position: absolute; right: 24px;
+			position: absolute;bottom: 22px;
+			border-radius: 4px;
+			cursor: pointer;
+			color: azure;
+			background:#49b3f4;
+			border: none;
+		}
 	}
 
+
 	li {
-		background: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background: azure;
+		border: none;
 		list-style: none;
 		height: 46px;
-		border-radius: 3px;
-		margin-bottom: 2px;
+		border-radius: 4px;
+		margin-bottom: 3px;
 	}
 
 	.task-index-link {
 		text-decoration: none;
+		color: black
 	}
 
 	input {
-		border: 1px	solid	black;
-		border-radius: 3px;
+		border: none;
+		background: transparent;
+		padding-left: 10px;
+	}
+
+	.add-task-input {
+		background: azure;
+		border: none;
+		border-radius: 4px;
+		height: 46px;
+	}
+
+	span {
+		margin-left: 10px;
+		margin-right: 25px;
 	}
 }
