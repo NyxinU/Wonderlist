@@ -159,7 +159,7 @@ body {
 
 		div {
 			display: flex;
-			align-items: center;
+			align-items: flex-start;
 		}
 	}
 
@@ -190,6 +190,7 @@ body {
 			align-items: flex-start;
 			display: inline-block;
 			padding-left: 20px;
+			padding-top: 2px;
 
 			input {
 				display:inline-block;
