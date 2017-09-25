@@ -30,6 +30,10 @@ list1 = List.create!({
   title: "App Academy",
   user_id: user1.id
 })
+list2 = List.create!({
+  title: "Errands",
+  user_id: user1.id
+})
 
 Task.destroy_all
 
@@ -43,6 +47,6 @@ task1 = Task.create!({
 task2 = Task.create!({
   title: 'Finish full stack project',
   user_id: user1.id,
-  due: Date.parse("20/09/2018"),
+  due: Date.parse("28/09/2018"),
   reward: "start JS project"
 })
