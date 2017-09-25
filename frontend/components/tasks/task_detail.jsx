@@ -80,7 +80,7 @@ class TaskDetail extends React.Component {
             />
           </label>
           <label>Reward:
-          <input
+          <textarea
             type="text"
             value={reward ? reward : ""}
             onChange={this.updateState("reward")}

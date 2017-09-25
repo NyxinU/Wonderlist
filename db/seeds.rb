@@ -58,6 +58,7 @@ task = Task.create(
       due: Date.parse("19/10/2017"),
       reward: "study algorithms"
     },
+    {
       title: 'sleep',
       due: Date.parse("20/10/2017"),
       reward: "you get to sleep, what more do you want?"

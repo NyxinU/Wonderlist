@@ -146,7 +146,7 @@ body {
 		"nav 		form 	 aside"
 		"nav    ul     aside";
 
-	background-image:url(https://www.pixelstalk.net/wp-content/uploads/2016/06/Free-Photos-Light-Blue-Backgrounds.jpg);
+	background-color: #bfdce8;
 
 	header {
 		grid-area: header;
@@ -177,11 +177,25 @@ body {
 			width: 100%;
 			font-weight: bold;
 			font-size: 35px;
+			padding-top: 12px;
+			margin-bottom: 12px;
 		}
 
 		label {
 			display: flex;
 			align-items: flex-start;
+			padding-left: 20px;
+			margin-bottom: 10px;
+
+			input {
+				display:inline-block;
+			}
+
+			textarea {
+				border: none;
+				width: 100%;
+				margin-left: 10px;
+			}
 		}
 
 		.update-task {
@@ -190,11 +204,12 @@ body {
 			color: azure;
 			background:#49b3f4;
 			border: none;
-			width: 90%;
+			margin-left: 2.5%;
+			height: 35px;
 		}
 
 		input[type="submit"] {
-			width: 100%
+			width: 95%
 		}
 
 		a {
