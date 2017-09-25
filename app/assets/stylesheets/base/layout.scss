@@ -213,13 +213,15 @@ body {
 		}
 
 		a {
-			position:absolute; bottom: 22px;
+			position:absolute; bottom: 21px;
 			margin-left: 12px;
 			border-radius: 4px;
 			cursor: pointer;
 			color: azure;
 			background:#49b3f4;
 			border: none;
+			padding: 1px 7px 1px 7px;
+			text-decoration: none;
 		}
 
 		button {
