@@ -74,13 +74,12 @@ body {
 
 .homepage {
 	display:grid;
-	grid-template-rows: 1fr 5fr 1fr;
+	grid-template-rows: 1fr 8fr 1fr;
 	grid-template-areas:
 	 	"header"
 		"img"
 		"div";
-	background-color: #bfdce8;
-	padding-bottom: 143px;
+
 
 	header {
 		grid-area: header;
@@ -91,7 +90,7 @@ body {
 
 	h1 {
 		display: inline-block;
-		font-size: 35px;
+		font-size: 30px;
 		font-family: 'Permanent Marker', cursive;
 		margin: 0;
 		margin-left: 10%;
@@ -106,8 +105,9 @@ body {
 
 	img {
 		grid-area: img;
+		width: 100%;
 		height: 100%;
-		margin:auto;
+		background-color: #d2e4fd;
 	}
 
 	div {
