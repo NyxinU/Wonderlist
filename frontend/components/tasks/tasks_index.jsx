@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
+import TaskForm from './task_form';
 import TaskIndexItem from './task_index_item';
 import TaskDetailContainer from './task_detail_container';
 import ListsIndexContainer from '../lists/lists_index_container';
 
-class TasksIndex extends Component {
+class HomepageIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      title: ''
-    };
-    this.handleNewTask = this.handleNewTask.bind(this);
+
     this.getStateFromChild = this.getStateFromChild.bind(this);
   }
 
@@ -25,27 +23,13 @@ class TasksIndex extends Component {
     tasksPath ? nextProps.requestAllTasks() : nextProps.requestAllTasks(nextProps.match.params.listId);}
   }
 
-  handleNewTask(e) {
-    e.preventDefault();
-    const state = Object.assign({},this.state);
-    this.props.createTask(this.state);
-    this.setState({
-      title: ''
-    });
-  }
-
   getStateFromChild (dataFromChild) {
     this.props.updateTask(dataFromChild);
   }
 
-  updateState(field) {
-    return e => this.setState({
-      [field]: e.currentTarget.value
-    });
-  }
 
   render () {
-    const { tasks } = this.props;
+    const { tasks, createTask } = this.props;
     return (
       <section className="task-index">
         <header> Welcome User with dropdown to logout and search bar </header>
@@ -53,23 +37,7 @@ class TasksIndex extends Component {
           <Route path='/tasks/' component={ListsIndexContainer} />
           <Route path='/lists/' component={ListsIndexContainer} />
         </nav>
-        <form onSubmit={this.handleNewTask}>
-          <div>
-            <input
-              type="text"
-              className="add-task-input"
-              value={this.state.title}
-              onChange={this.updateState("title")}
-              placeholder={"Add a task..."}
-              />
-          </div>
-          <noscript>
-          <input
-            type="submit"
-            value={"Add Task"}
-            />
-          </noscript>
-        </form>
+          <TaskForm tasks={tasks} createTask={createTask} />
         <ul>
           {tasks.map(task => <TaskIndexItem key={task.id} task={task} callBackFromParent={this.getStateFromChild} />)}
         </ul>
@@ -79,4 +47,4 @@ class TasksIndex extends Component {
   }
 }
 
-export default TasksIndex;
+export default HomepageIndex;

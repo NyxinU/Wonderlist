@@ -38,9 +38,9 @@ list2 = List.create!({
 Task.destroy_all
 
 task1 = Task.create!({
-  title: 'be awesome',
+  title: 'be awesomer',
   user_id: user1.id,
-  list_id: list1.id,
+  list_id: list2.id,
   due: Date.parse("01/01/2018"),
   reward: "awesomeness"
 })
@@ -48,14 +48,14 @@ task1 = Task.create!({
 task2 = Task.create!({
   title: 'Finish full stack project',
   user_id: user1.id,
-  list_id: list2.id,
-  due: Date.parse("28/09/2018"),
+  list_id: list1.id,
+  due: Date.parse("28/09/2017"),
   reward: "start JS project"
 })
 task3 = Task.create!({
-  title: 'be cool',
+  title: 'be cooler',
   user_id: user1.id,
-  list_id: list1.id,
+  list_id: list2.id,
   due: Date.parse("02/02/2019"),
   reward: "coolness"
 })
@@ -63,7 +63,7 @@ task3 = Task.create!({
 task4 = Task.create!({
   title: 'Finish JS project',
   user_id: user1.id,
-  list_id: list2.id,
+  list_id: list1.id,
   due: Date.parse("04/10/2017"),
   reward: "start flex project"
 })

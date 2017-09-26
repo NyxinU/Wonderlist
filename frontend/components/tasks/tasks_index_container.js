@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import TasksIndex from './tasks_index';
+import HomepageIndex from './tasks_index';
 import { requestAllTasks, updateTask, createTask } from '../../actions/task_actions';
 import { asArray } from '../../reducers/selectors';
 
@@ -17,4 +17,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TasksIndex);
+)(HomepageIndex);

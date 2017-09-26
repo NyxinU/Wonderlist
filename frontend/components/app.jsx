@@ -4,7 +4,7 @@ import { AuthRoute } from '../util/route_util';
 
 import SessionFormContainer from './session_form/session_form_container';
 import ListsIndexContainer from './lists/lists_index_container';
-import TasksIndexContainer from './tasks/tasks_index_container';
+import HomepageIndexContainer from './tasks/tasks_index_container';
 import TaskDetailContainer from './tasks/task_detail_container';
 import GreetingContainer from './greeting/greeting_container';
 
@@ -14,8 +14,8 @@ const App = () => (
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
-      <Route path="/lists/:listId" component={TasksIndexContainer} />
-      <Route path="/tasks" component={TasksIndexContainer} />
+      <Route path="/lists/:listId" component={HomepageIndexContainer} />
+      <Route path="/tasks" component={HomepageIndexContainer} />
       <Route exact path="/" component={GreetingContainer} />
     </Switch>
   </div>
