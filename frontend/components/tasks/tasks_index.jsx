@@ -4,6 +4,7 @@ import TaskForm from './task_form';
 import TaskIndexItem from './task_index_item';
 import TaskDetailContainer from './task_detail_container';
 import ListsIndexContainer from '../lists/lists_index_container';
+import TestComponent from './test_component';
 
 class HomepageIndex extends React.Component {
   constructor(props) {
@@ -30,18 +31,26 @@ class HomepageIndex extends React.Component {
 
   render () {
     const { tasks, createTask } = this.props;
+    const listId = this.props.location.pathname.match(/\d+/)[0];
+    console.log(listId);
     return (
       <section className="task-index">
         <header> Welcome User with dropdown to logout and search bar </header>
         <nav>
-          <Route path='/tasks/' component={ListsIndexContainer} />
-          <Route path='/lists/' component={ListsIndexContainer} />
+          <ListsIndexContainer />
         </nav>
-          <TaskForm tasks={tasks} createTask={createTask} />
+          <TaskForm tasks={tasks} createTask={createTask}/>
         <ul>
-          {tasks.map(task => <TaskIndexItem key={task.id} task={task} callBackFromParent={this.getStateFromChild} />)}
+          {tasks.map(
+            task => <TaskIndexItem
+            key={task.id}
+            task={task}
+            listId={listId}
+            callBackFromParent={this.getStateFromChild}
+            />
+          )}
         </ul>
-        <Route path='/tasks/:taskId' component={TaskDetailContainer} />
+        <Route path='/lists/:listId/:taskId' component={TaskDetailContainer} />
       </section>
     );
   }

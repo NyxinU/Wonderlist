@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const TaskIndexItem = ({ task, callBackFromParent }) => {
+const TaskIndexItem = ({ task, callBackFromParent, listId }) => {
   var weekday=new Array(7);
   weekday[0]="Sun";
   weekday[1]="Mon";
@@ -25,9 +25,8 @@ const TaskIndexItem = ({ task, callBackFromParent }) => {
     newState.completed = !newState.completed;
     callBackFromParent(newState);
   };
-
   return (
-    <Link to={`/tasks/${task.id}`}
+    <Link to={`/lists/${listId}/${task.id}`}
       className="task-index-link">
       <li>
         <span>
