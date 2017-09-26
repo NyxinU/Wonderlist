@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import TaskIndexItem from './task_index_item';
 import TaskDetailContainer from './task_detail_container';
 import ListsIndexContainer from '../lists/lists_index_container';
@@ -14,8 +14,15 @@ class TasksIndex extends Component {
     this.getStateFromChild = this.getStateFromChild.bind(this);
   }
 
-  componentWillMount() {
-    this.props.requestAllTasks();
+  componentDidMount() {
+    const tasksPath = /tasks/.exec(this.props.match.path);
+    tasksPath ? this.props.requestAllTasks() : this.props.requestAllTasks(this.props.match.params.listId);
+
+  }
+  componentWillReceiveProps(nextProps) {
+    if (this.props.location.pathname !== nextProps.location.pathname)
+    {const tasksPath = /tasks/.exec(nextProps.location.pathname);
+    tasksPath ? nextProps.requestAllTasks() : nextProps.requestAllTasks(nextProps.match.params.listId);}
   }
 
   handleNewTask(e) {
@@ -43,7 +50,8 @@ class TasksIndex extends Component {
       <section className="task-index">
         <header> Welcome User with dropdown to logout and search bar </header>
         <nav>
-          <Route path='/tasks' component={ListsIndexContainer} />
+          <Route path='/tasks/' component={ListsIndexContainer} />
+          <Route path='/lists/' component={ListsIndexContainer} />
         </nav>
         <form onSubmit={this.handleNewTask}>
           <div>

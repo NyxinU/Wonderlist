@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as SessionApiUtil from './actions/session_actions';
 import * as ListUtil from './actions/list_actions';
+import * as TaskUtil from './actions/task_actions';
 import configureStore from './store/store';
 import Root from './components/root';
 
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.logout = SessionApiUtil.logout;
   window.signup = SessionApiUtil.signup;
   window.requestAllLists = ListUtil.requestAllLists;
+  window.requestAllTasks = TaskUtil.requestAllTasks;
   window.requestList = ListUtil.requestList;
   window.createList = ListUtil.createList;
   window.updateList = ListUtil.updateList;

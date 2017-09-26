@@ -14,6 +14,7 @@ const App = () => (
     <Switch>
       <AuthRoute path="/login" component={SessionFormContainer} />
       <AuthRoute path="/signup" component={SessionFormContainer} />
+      <Route path="/lists/:listId" component={TasksIndexContainer} />
       <Route path="/tasks" component={TasksIndexContainer} />
       <Route exact path="/" component={GreetingContainer} />
     </Switch>

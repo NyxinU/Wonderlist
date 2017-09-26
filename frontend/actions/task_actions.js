@@ -6,8 +6,8 @@ export const REMOVE_TASK = 'REMOVE_TASK';
 export const RECEIVE_TASK_ERRORS = 'RECEIVE_TASK_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
-export const requestAllTasks = () => dispatch => (
-  TaskUtil.fetchTasks().then(tasks => dispatch(receiveAllTasks(tasks)))
+export const requestAllTasks = (listId) => dispatch => (
+  TaskUtil.fetchTasks(listId).then(tasks => dispatch(receiveAllTasks(tasks)))
 );
 
 export const requestTask = id => dispatch => (

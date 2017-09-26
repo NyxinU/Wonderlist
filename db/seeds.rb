@@ -52,3 +52,18 @@ task2 = Task.create!({
   due: Date.parse("28/09/2018"),
   reward: "start JS project"
 })
+task3 = Task.create!({
+  title: 'be cool',
+  user_id: user1.id,
+  list_id: list1.id,
+  due: Date.parse("02/02/2019"),
+  reward: "coolness"
+})
+
+task4 = Task.create!({
+  title: 'Finish JS project',
+  user_id: user1.id,
+  list_id: list2.id,
+  due: Date.parse("04/10/2017"),
+  reward: "start flex project"
+})
