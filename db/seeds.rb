@@ -40,6 +40,7 @@ Task.destroy_all
 task1 = Task.create!({
   title: 'be awesome',
   user_id: user1.id,
+  list_id: list1.id,
   due: Date.parse("01/01/2018"),
   reward: "awesomeness"
 })
@@ -47,6 +48,7 @@ task1 = Task.create!({
 task2 = Task.create!({
   title: 'Finish full stack project',
   user_id: user1.id,
+  list_id: list2.id,
   due: Date.parse("28/09/2018"),
   reward: "start JS project"
 })

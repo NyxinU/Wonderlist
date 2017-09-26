@@ -55,7 +55,7 @@ body {
 
 .session-create-button, .input[type=submit], .session-delete-button {
 	height: 36px;
-	color: azure;
+	color: white;
 	background:#49b3f4;
 	border:0 none;
 	cursor:pointer;
@@ -137,7 +137,7 @@ body {
 		"nav 		form 	 aside"
 		"nav    ul     aside";
 
-	background-color: #bfdce8;
+	background-color: #d7e7f5;
 
 	header {
 		grid-area: header;
@@ -170,7 +170,7 @@ body {
 
 	aside {
 		grid-area: aside;
-		background: azure;
+		background: white;
 		border: none;
 		border-radius: 4px;
 		margin-right: 12px;
@@ -209,7 +209,7 @@ body {
 		.update-task {
 			border-radius: 4px;
 			cursor: pointer;
-			color: azure;
+			color: white;
 			background:#49b3f4;
 			border: none;
 			margin-left: 2.5%;
@@ -225,7 +225,7 @@ body {
 			margin-left: 12px;
 			border-radius: 4px;
 			cursor: pointer;
-			color: azure;
+			color: white;
 			background:#49b3f4;
 			border: none;
 			padding: 1px 7px 1px 7px;
@@ -237,7 +237,7 @@ body {
 			position: absolute;bottom: 22px;
 			border-radius: 4px;
 			cursor: pointer;
-			color: azure;
+			color: white;
 			background:#49b3f4;
 			border: none;
 		}
@@ -252,7 +252,7 @@ body {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		background: azure;
+		background: white;
 		border: none;
 		list-style: none;
 		height: 46px;
@@ -272,7 +272,7 @@ body {
 	}
 
 	.add-task-input {
-		background: azure;
+		background: white;
 		border: none;
 		border-radius: 4px;
 		padding-left: 10px;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import TaskIndexItem from './task_index_item';
 import TaskDetailContainer from './task_detail_container';
+import ListsIndexContainer from '../lists/lists_index_container';
 
 class TasksIndex extends Component {
   constructor(props) {
@@ -41,7 +42,9 @@ class TasksIndex extends Component {
     return (
       <section className="task-index">
         <header> Welcome User with dropdown to logout and search bar </header>
-        <nav>List Index will go here</nav>
+        <nav>
+          <Route path='/tasks' component={ListsIndexContainer} />
+        </nav>
         <form onSubmit={this.handleNewTask}>
           <div>
             <input
