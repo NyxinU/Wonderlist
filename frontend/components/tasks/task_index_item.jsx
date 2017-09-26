@@ -26,7 +26,7 @@ const TaskIndexItem = ({ task, callBackFromParent, listId }) => {
     callBackFromParent(newState);
   };
   return (
-    <Link to={`/lists/${listId}/${task.id}`}
+    <Link to={`/lists/${listId}/tasks/${task.id}`}
       className="task-index-link">
       <li>
         <span>

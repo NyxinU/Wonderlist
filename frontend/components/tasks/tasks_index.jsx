@@ -19,9 +19,8 @@ class HomepageIndex extends React.Component {
 
   }
   componentWillReceiveProps(nextProps) {
-    if (this.props.location.pathname !== nextProps.location.pathname)
-    {const tasksPath = /tasks/.exec(nextProps.location.pathname);
-    tasksPath ? nextProps.requestAllTasks() : nextProps.requestAllTasks(nextProps.match.params.listId);}
+    if (this.props.match.params.listId !== nextProps.match.params.listId)
+    {nextProps.requestAllTasks(nextProps.match.params.listId);}
   }
 
   getStateFromChild (dataFromChild) {
@@ -31,8 +30,7 @@ class HomepageIndex extends React.Component {
 
   render () {
     const { tasks, createTask } = this.props;
-    const listId = this.props.location.pathname.match(/\d+/)[0];
-    console.log(listId);
+    const listId = this.props.match.params.listId
     return (
       <section className="task-index">
         <header> Welcome User with dropdown to logout and search bar </header>
@@ -50,10 +48,13 @@ class HomepageIndex extends React.Component {
             />
           )}
         </ul>
-        <Route path='/lists/:listId/:taskId' component={TaskDetailContainer} />
+        <Route path='/lists/:listId/tasks/:taskId' component={TaskDetailContainer} />
       </section>
     );
   }
 }
 
 export default HomepageIndex;
+
+// const tasksPath = /tasks/.exec(nextProps.location.pathname);
+// tasksPath ? nextProps.requestAllTasks() :

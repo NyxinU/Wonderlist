@@ -62,7 +62,7 @@ class TaskDetail extends React.Component {
     weekday[6]="Sat";
     const dueDate = new Date(due);
     const day = weekday[dueDate.getUTCDay()];
-
+    const listId = this.props.match.params.listId
     return (
       <aside className="task-detail">
         <form onSubmit={this.updateDb}>
@@ -94,7 +94,7 @@ class TaskDetail extends React.Component {
               type="submit"
               value={"Update Task"} />
             <footer>
-            <Link to="/tasks">close x</Link>
+            <Link to={`/lists/${listId}`}>close x</Link>
             <button onClick={this.handleDeleteTask} >
               Delete Task
             </button>

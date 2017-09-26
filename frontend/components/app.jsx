@@ -22,5 +22,3 @@ const App = () => (
 );
 
 export default App;
-
-// <Route path='/lists/:listId/:taskId' component={GreetingContainer} />

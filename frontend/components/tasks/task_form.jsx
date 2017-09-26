@@ -25,7 +25,6 @@ class TaskForm extends React.Component {
         });
       }
   render () {
-
     return (
     <form onSubmit={this.handleNewTask}>
       <div>
