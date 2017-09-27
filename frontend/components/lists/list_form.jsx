@@ -28,13 +28,18 @@ class ListForm extends Component {
 
   render () {
     return (
-      <form onSubmit={this.handleNewList}>
+      <form
+        onSubmit={this.handleNewList}>
+        <div>
         <input
           type="text"
+          className="add-list-input"
           value={this.state.title}
           onChange={this.updateState("title")}
-          placeholder={"List Name"}
+          placeholder={"Add a new list"}
+          maxLength="40"
           />
+        </div>
           <noscript>
           <input
             type="submit"

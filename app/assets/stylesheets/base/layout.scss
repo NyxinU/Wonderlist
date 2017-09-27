@@ -6,6 +6,8 @@
 body {
 	margin: 0;
 	padding: 0;
+	margin: 12px;
+	background-color: #d7e7f5;
 }
 
 .btn-info {
@@ -129,7 +131,7 @@ body {
 .task-index {
 	display: grid;
 	grid-template-columns: 1fr 3fr 2fr;
-	grid-template-rows: 1fr 1fr 1fr 17.98fr;
+	grid-template-rows: 1fr 1fr 1fr 13.5fr;
 	grid-gap: .6rem;
 
 	grid-template-areas:
@@ -142,10 +144,31 @@ body {
 
 	header {
 		grid-area: header;
+
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		h2{
+			display: inline-block;
+		}
 	}
 
 	nav {
 		grid-area: nav;
+
+		a{
+			text-decoration: none;
+			color: black;
+		}
+
+		li {
+			display: flex;
+			justify-content: flex-start;
+			padding-left: 10px;
+		}
 	}
 
 	form {
@@ -164,6 +187,10 @@ body {
 		}
 	}
 
+.active-button {
+	background-color: grey;
+}
+
 	ul {
 		grid-area: ul;
 		padding-left: 0px
@@ -174,7 +201,6 @@ body {
 		background: white;
 		border: none;
 		border-radius: 4px;
-		margin-right: 12px;
 		margin-bottom: 12px;
 
 		.task-detail-title {
@@ -275,11 +301,10 @@ body {
 		padding-left: 10px;
 	}
 
-	.add-task-input {
+	.add-task-input, .add-list-input {
 		background: white;
 		border: none;
 		border-radius: 4px;
-		padding-left: 10px;
 		width:100%;
 		height: 46px;
 	}

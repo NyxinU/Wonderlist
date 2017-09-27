@@ -49,6 +49,7 @@ class ListIndexItem extends React.Component {
           value={this.state.title}
           onChange={this.updateState("title")}
           placeholder={"List Name"}
+          maxLength="40"
           />
           <noscript>
           <input
@@ -63,7 +64,6 @@ class ListIndexItem extends React.Component {
 
 
     render () {
-
       const { list } = this.props;
       return (
         <div>

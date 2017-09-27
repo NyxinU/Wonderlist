@@ -6,10 +6,10 @@ const Greeting = ({ currentUser, logout }) => (
 );
 
 const welcomeMessage = (currentUser, logout) => (
-  <div>
+  <header>
     <h2>Don't forget to treat yourself {currentUser.first_name}!</h2>
     <button className="session-delete-button" onClick={logout}>Log Out</button>
-  </div>
+  </header>
 );
 
 const sessionLinks = () => (

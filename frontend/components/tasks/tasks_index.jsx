@@ -4,6 +4,7 @@ import TaskForm from './task_form';
 import TaskIndexItem from './task_index_item';
 import TaskDetailContainer from './task_detail_container';
 import ListsIndexContainer from '../lists/lists_index_container';
+import GreetingContainer from '../greeting/greeting_container';
 import TestComponent from './test_component';
 
 class HomepageIndex extends React.Component {
@@ -15,7 +16,10 @@ class HomepageIndex extends React.Component {
     this.getStateFromChild = this.getStateFromChild.bind(this);
     this.handleShowIncompleteTask = this.handleShowIncompleteTask.bind(this);
     this.handleShowCompletedTask = this.handleShowCompletedTask.bind(this);
+
+
   }
+
 
   componentDidMount() {
     const tasksPath = /tasks/.exec(this.props.match.path);
@@ -73,13 +77,28 @@ class HomepageIndex extends React.Component {
     );
   }
 
+  giveIncompleteClass() {
+    if (this.state.showincompleteTask) {
+      return "active-button";
+    }else {
+      return "inactive-button";
+    }
+  }
+
+  giveCompleteClass() {
+    if (this.state.showincompleteTask) {
+      return  "inactive-button";
+    }else {
+      return  "active-button";
+    }
+  }
 
   render () {
     const { tasks, createTask, currentUser, incompleteTasks } = this.props;
     const listId = this.props.match.params.listId;
     return (
       <section className="task-index">
-        <header> Welcome User with dropdown to logout and search bar </header>
+        <header><GreetingContainer /></header>
         <nav>
           <ListsIndexContainer />
         </nav>
@@ -90,8 +109,8 @@ class HomepageIndex extends React.Component {
             listId={listId}
             />
           <div>
-          <button onClick={this.handleShowIncompleteTask}>Incomplete</button>
-          <button onClick={this.handleShowCompletedTask}>Completed</button>
+          <button className={this.giveIncompleteClass()} onClick={this.handleShowIncompleteTask}>Incomplete</button>
+          <button className={this.giveCompleteClass()} onClick={this.handleShowCompletedTask}>Completed</button>
           </div>
         {this.state.showincompleteTask ? this.showIncompleteTask() : this.showCompletedTask()}
         <Route path='/lists/:listId/tasks/:taskId' component={TaskDetailContainer} />
