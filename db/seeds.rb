@@ -34,6 +34,10 @@ list2 = List.create!({
   title: "Errands",
   user_id: user1.id
 })
+list3 = List.create!({
+  title: "Nix's to-dos",
+  user_id: user2.id
+})
 
 Task.destroy_all
 

@@ -11,7 +11,7 @@ const TasksReducer = (state = {}, action) => {
 
   switch(action.type){
     case RECEIVE_ALL_TASKS:
-      return merge({}, action.tasks);
+      return action.tasks
     case RECEIVE_TASK:
       const newTask = {[action.task.id]: action.task};
       return merge({}, state, newTask);

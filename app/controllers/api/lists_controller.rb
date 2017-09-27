@@ -1,6 +1,10 @@
 class Api::ListsController < ApplicationController
+  before_action :deny_access_if_not_logged_in
+
   def index
-    @lists = List.all
+    @lists = List.where(user_id: current_user.id)
+
+    # @lists = lists
 
     render :index
   end

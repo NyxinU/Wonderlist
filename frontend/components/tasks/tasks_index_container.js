@@ -5,7 +5,8 @@ import { requestAllTasks, updateTask, createTask } from '../../actions/task_acti
 import { asArray } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
-  tasks: asArray(state.entities)
+  tasks: asArray(state.entities),
+  currentUser:  state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

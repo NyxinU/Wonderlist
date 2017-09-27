@@ -11,7 +11,7 @@ const ListsReducer = (state = {}, action) => {
 
   switch(action.type){
     case RECEIVE_ALL_LISTS:
-      return merge({}, state, action.lists);
+    return action.lists
     case RECEIVE_LIST:
       const newList = {[action.list.id]: action.list};
       return merge({}, state, newList);

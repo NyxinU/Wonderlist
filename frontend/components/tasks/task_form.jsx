@@ -5,15 +5,16 @@ class TaskForm extends React.Component {
   constructor(props) {
     super(props);
       this.state = {
-        title: ''
+        title: '',
+        user_id: this.props.currentUser.id,
       };
       this.handleNewTask = this.handleNewTask.bind(this);
     }
 
       handleNewTask(e) {
         e.preventDefault();
-        const state = Object.assign({},this.state);
-        this.props.createTask(this.state);
+        const state = Object.assign({},this.state, {list_id: this.props.listId} );
+        this.props.createTask(state);
         this.setState({
           title: ''
         });

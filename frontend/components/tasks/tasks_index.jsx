@@ -29,15 +29,21 @@ class HomepageIndex extends React.Component {
 
 
   render () {
-    const { tasks, createTask } = this.props;
-    const listId = this.props.match.params.listId
+    const { tasks, createTask, currentUser } = this.props;
+    const listId = this.props.match.params.listId;
     return (
       <section className="task-index">
         <header> Welcome User with dropdown to logout and search bar </header>
         <nav>
+          // <ListForm />
           <ListsIndexContainer />
         </nav>
-          <TaskForm tasks={tasks} createTask={createTask}/>
+          <TaskForm
+            tasks={tasks}
+            createTask={createTask}
+            currentUser={currentUser}
+            listId={listId}
+            />
         <ul>
           {tasks.map(
             task => <TaskIndexItem
