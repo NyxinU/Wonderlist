@@ -3,9 +3,7 @@ class Api::ListsController < ApplicationController
 
   def index
     @lists = List.where(user_id: current_user.id)
-
-    # @lists = lists
-
+    
     render :index
   end
 

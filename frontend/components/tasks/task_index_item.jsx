@@ -26,26 +26,19 @@ const TaskIndexItem = ({ task, callBackFromParent, listId }) => {
     callBackFromParent(newState);
   };
 
-  const redirectToList = () => {
-    return (<Redirect to={`/lists/${listId}`}/>);
-  };
-
-
   return (
+    <li>
+      <input
+        className="testing-input"
+        type="checkbox"
+        onChange={giveStateToParent}
+        />
     <Link to={`/lists/${listId}/tasks/${task.id}`}
       className="task-index-link">
-      <li>
-        <span>
-          <input
-              type="checkbox"
-              onChange={giveStateToParent}
-              onClick={redirectToList}
-              />
-          <span>{task.title}</span>
-        </span>
+        <span>{task.title}</span>
         <span>{task.due ? fulldate : ""}</span>
-      </li>
     </Link>
+  </li>
   );
 };
 

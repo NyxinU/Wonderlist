@@ -129,12 +129,13 @@ body {
 .task-index {
 	display: grid;
 	grid-template-columns: 1fr 3fr 2fr;
-	grid-template-rows: 1fr 1fr 17.98fr;
+	grid-template-rows: 1fr 1fr 1fr 17.98fr;
 	grid-gap: .6rem;
 
 	grid-template-areas:
 	 	"header header header"
 		"nav 		form 	 aside"
+		"nav 		div aside"
 		"nav    ul     aside";
 
 	background-color: #d7e7f5;
@@ -261,8 +262,11 @@ body {
 	}
 
 	.task-index-link {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
 		text-decoration: none;
-		color: black
+		color: black;
 	}
 
 	input {

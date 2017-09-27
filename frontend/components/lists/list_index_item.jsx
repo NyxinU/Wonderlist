@@ -6,7 +6,7 @@ class ListIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: '',
+      title: this.props.list.title,
       id: this.props.list.id,
       user_id: this.props.currentUser.id,
       toggleEditForm: false
@@ -32,7 +32,6 @@ class ListIndexItem extends React.Component {
     const state = Object.assign({}, this.state);
     this.props.updateList(state);
     this.handleEditToggle();
-    this.setState({title: ''});
   }
 
   updateState(field) {

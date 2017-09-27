@@ -75,7 +75,6 @@ class HomepageIndex extends React.Component {
 
 
   render () {
-    console.log(this.state);
     const { tasks, createTask, currentUser, incompleteTasks } = this.props;
     const listId = this.props.match.params.listId;
     return (
@@ -90,8 +89,10 @@ class HomepageIndex extends React.Component {
             currentUser={currentUser}
             listId={listId}
             />
+          <div>
           <button onClick={this.handleShowIncompleteTask}>Incomplete</button>
           <button onClick={this.handleShowCompletedTask}>Completed</button>
+          </div>
         {this.state.showincompleteTask ? this.showIncompleteTask() : this.showCompletedTask()}
         <Route path='/lists/:listId/tasks/:taskId' component={TaskDetailContainer} />
       </section>
