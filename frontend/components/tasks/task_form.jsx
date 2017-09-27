@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class TaskForm extends React.Component {
+class TaskForm extends Component {
   constructor(props) {
     super(props);
       this.state = {
@@ -44,7 +44,7 @@ class TaskForm extends React.Component {
         />
       </noscript>
     </form>
-  );
+    );
   }
 }
 

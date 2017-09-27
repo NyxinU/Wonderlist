@@ -35,7 +35,6 @@ class HomepageIndex extends React.Component {
       <section className="task-index">
         <header> Welcome User with dropdown to logout and search bar </header>
         <nav>
-          // <ListForm />
           <ListsIndexContainer />
         </nav>
           <TaskForm
