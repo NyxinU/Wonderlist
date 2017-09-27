@@ -16,7 +16,6 @@ class HomepageIndex extends React.Component {
   componentDidMount() {
     const tasksPath = /tasks/.exec(this.props.match.path);
     tasksPath ? this.props.requestAllTasks() : this.props.requestAllTasks(this.props.match.params.listId);
-
   }
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.listId !== nextProps.match.params.listId)

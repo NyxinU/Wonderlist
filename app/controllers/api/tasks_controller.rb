@@ -44,8 +44,10 @@ class Api::TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find(params[:id])
+    Task.where(list_id: params[:listId]).destroy_all if params[:listId]
 
+    @task = Task.find(params[:id])
+    # if i get a list_id task.where(list_id: params[list_id]).destroy_all
     if @task
       @task.destroy
       render :show

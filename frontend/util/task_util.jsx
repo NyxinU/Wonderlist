@@ -29,9 +29,10 @@ export const updateTask = task => (
   })
 );
 
-export const destroyTask = id => (
+export const destroyTask = (id, listId) => (
   $.ajax({
     method: 'DELETE',
-    url: `/api/tasks/${id}`
+    url: `/api/tasks/${id}`,
+    data: {listId: listId}
   })
 );
