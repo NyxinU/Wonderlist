@@ -25,18 +25,16 @@ const TaskIndexItem = ({ task, callBackFromParent, listId }) => {
     newState.completed = !newState.completed;
     callBackFromParent(newState);
   };
+
+
   return (
     <Link to={`/lists/${listId}/tasks/${task.id}`}
       className="task-index-link">
       <li>
         <span>
-          {task.completed ? <input
-            type="checkbox"
-            onChange={giveStateToParent} checked/> :
-            <input
+          <input
               type="checkbox"
-              onChange={giveStateToParent} />}
-
+              onChange={giveStateToParent} />
           <span>{task.title}</span>
         </span>
         <span>{task.due ? fulldate : ""}</span>

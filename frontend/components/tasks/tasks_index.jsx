@@ -9,8 +9,12 @@ import TestComponent from './test_component';
 class HomepageIndex extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      showincompleteTask: true
+    };
     this.getStateFromChild = this.getStateFromChild.bind(this);
+    this.handleShowIncompleteTask = this.handleShowIncompleteTask.bind(this);
+    this.handleShowCompletedTask = this.handleShowCompletedTask.bind(this);
   }
 
   componentDidMount() {
@@ -26,9 +30,53 @@ class HomepageIndex extends React.Component {
     this.props.updateTask(dataFromChild);
   }
 
+  handleShowIncompleteTask() {
+    this.setState({
+      showincompleteTask: true
+    });
+  }
+
+  handleShowCompletedTask() {
+    this.setState({
+      showincompleteTask: false
+    });
+  }
+
+
+  showIncompleteTask() {
+    return (
+      <ul>
+        {this.props.incompleteTasks.map(
+          task => <TaskIndexItem
+          key={task.id}
+          task={task}
+          listId={this.props.match.params.listId}
+          callBackFromParent={this.getStateFromChild}
+          />
+        )}
+      </ul>
+    );
+  }
+
+  showCompletedTask() {
+    return (
+      <ul>
+        {this.props.completedTasks.map(
+          task => <TaskIndexItem
+          key={task.id}
+          task={task}
+          listId={this.props.match.params.listId}
+          callBackFromParent={this.getStateFromChild}
+          />
+        )}
+      </ul>
+    );
+  }
+
 
   render () {
-    const { tasks, createTask, currentUser } = this.props;
+    console.log(this.state);
+    const { tasks, createTask, currentUser, incompleteTasks } = this.props;
     const listId = this.props.match.params.listId;
     return (
       <section className="task-index">
@@ -42,16 +90,9 @@ class HomepageIndex extends React.Component {
             currentUser={currentUser}
             listId={listId}
             />
-        <ul>
-          {tasks.map(
-            task => <TaskIndexItem
-            key={task.id}
-            task={task}
-            listId={listId}
-            callBackFromParent={this.getStateFromChild}
-            />
-          )}
-        </ul>
+          <button onClick={this.handleShowIncompleteTask}>Incomplete</button>
+          <button onClick={this.handleShowCompletedTask}>Completed</button>
+        {this.state.showincompleteTask ? this.showIncompleteTask() : this.showCompletedTask()}
         <Route path='/lists/:listId/tasks/:taskId' component={TaskDetailContainer} />
       </section>
     );

@@ -2,11 +2,13 @@ import { connect } from 'react-redux';
 
 import HomepageIndex from './tasks_index';
 import { requestAllTasks, updateTask, createTask } from '../../actions/task_actions';
-import { asArray } from '../../reducers/selectors';
+import { allTaskAsArray, completedTasks, incompleteTasks } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
-  tasks: asArray(state.entities),
-  currentUser:  state.session.currentUser
+  tasks: allTaskAsArray(state.entities),
+  completedTasks: completedTasks(state.entities),
+  incompleteTasks: incompleteTasks(state.entities),
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

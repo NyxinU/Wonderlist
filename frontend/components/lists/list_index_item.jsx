@@ -11,7 +11,6 @@ class ListIndexItem extends React.Component {
       user_id: this.props.currentUser.id,
       toggleEditForm: false
     };
-    this.editForm = this.editForm.bind(this);
     this.handleDeleteList = this.handleDeleteList.bind(this);
     this.handleEditToggle = this.handleEditToggle.bind(this);
     this.handleUpdateList = this.handleUpdateList.bind(this);
@@ -65,7 +64,7 @@ class ListIndexItem extends React.Component {
 
 
     render () {
-      console.log(this.state);
+
       const { list } = this.props;
       return (
         <div>
