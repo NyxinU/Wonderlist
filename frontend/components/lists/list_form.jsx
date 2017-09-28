@@ -14,7 +14,8 @@ class ListForm extends Component {
   handleNewList(e) {
     e.preventDefault();
     const state = Object.assign({},this.state);
-    this.props.createList(state);
+    this.props.createList(state)
+      .then(data => this.props.history.push(`/lists/${data.list.id}`));
     this.setState({
       title: ''
     });

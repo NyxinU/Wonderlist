@@ -33,8 +33,10 @@ class ListIndexItem extends React.Component {
 
   handleDeleteList(e) {
     e.preventDefault();
-    this.props.deleteList(this.props.list.id);
-    this.props.history.push(`/lists/`)
+    if (window.confirm(`Are you sure you want to delete ${this.props.list.title}?`)) {
+      this.props.deleteList(this.props.list.id);
+      this.props.history.push(`/lists/`);
+    }
   }
 
   handleUpdateList(e) {

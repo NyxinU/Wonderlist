@@ -23,6 +23,7 @@ class ListsIndex extends Component {
         <ListForm
           currentUser={this.props.currentUser}
           createList={this.props.createList}
+          history={history}
           />
         <Link className="all-task-link" to='/lists'>All Tasks</Link>
       <ul>
