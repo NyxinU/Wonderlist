@@ -16,7 +16,8 @@ class ListsIndex extends Component {
   }
 
   render () {
-    const { lists, deleteList, updateList } = this.props;
+    // console.log(this.props);
+    const { lists, deleteList, updateList, history } = this.props;
     return (
       <div>
         <ListForm
@@ -32,6 +33,7 @@ class ListsIndex extends Component {
           updateList={updateList}
           currentUser={this.props.currentUser}
           params={this.props.match.params.listId}
+          history={history}
           />)}
       </ul>
       </div>

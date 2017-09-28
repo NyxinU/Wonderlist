@@ -73,21 +73,24 @@ class TaskDetail extends React.Component {
             onChange={this.updateState("title")}
             />
           <hr/>
-          <div>
-          <label>Due: {day}</label>
-          <input
-            type="date"
-            value={due ? due : ""}
-            onChange={this.updateState("due")}
-            />
+          <div className="aside-details">
+            <div>
+            <label>Due: {day}</label>
+            <input
+              type="date"
+              value={due ? due : ""}
+              onChange={this.updateState("due")}
+              />
           </div>
-          <div>
-          <label>Reward:</label>
-          <textarea
-            type="text"
-            value={reward ? reward : ""}
-            onChange={this.updateState("reward")}
-            />
+          <hr/>
+            <div>
+            <label>Reward:</label>
+            <textarea
+              type="text"
+              value={reward ? reward : ""}
+              onChange={this.updateState("reward")}
+              />
+            </div>
           </div>
             <input
               className="update-task"

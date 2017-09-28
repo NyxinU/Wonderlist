@@ -34,6 +34,7 @@ class ListIndexItem extends React.Component {
   handleDeleteList(e) {
     e.preventDefault();
     this.props.deleteList(this.props.list.id);
+    this.props.history.push(`/lists/`)
   }
 
   handleUpdateList(e) {
@@ -83,6 +84,7 @@ class ListIndexItem extends React.Component {
 
 
     render () {
+      console.log(this.props);
       const { list } = this.props;
       return (
         <div>

@@ -96,7 +96,6 @@ class HomepageIndex extends React.Component {
   }
 
   render () {
-    console.log(this.props);
     const { tasks, createTask, currentUser, incompleteTasks, completedTasks, lists} = this.props;
     const listId = this.props.match.params.listId;
     const incompleteTaskCount = incompleteTasks.length;
