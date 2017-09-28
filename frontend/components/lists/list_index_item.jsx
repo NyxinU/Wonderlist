@@ -74,7 +74,6 @@ class ListIndexItem extends React.Component {
   }
 
   giveSelectedClass(){
-    console.log(this.props);
     if (this.props.params === this.props.list.id) {
       return "active-button";
     }else {

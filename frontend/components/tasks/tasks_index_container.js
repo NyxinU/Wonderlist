@@ -6,6 +6,7 @@ import { allTaskAsArray, completedTasks, incompleteTasks } from '../../reducers/
 
 const mapStateToProps = state => ({
   tasks: allTaskAsArray(state.entities),
+  lists: state.entities.lists,
   completedTasks: completedTasks(state.entities),
   incompleteTasks: incompleteTasks(state.entities),
   currentUser: state.session.currentUser

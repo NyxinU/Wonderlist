@@ -5,6 +5,7 @@ import TaskForm from './task_form';
 import TaskIndexItem from './task_index_item';
 import TaskDetailContainer from './task_detail_container';
 import ListsIndexContainer from '../lists/lists_index_container';
+import ListSummary from '../lists/list_summary';
 import GreetingContainer from '../greeting/greeting_container';
 import TestComponent from './test_component';
 
@@ -95,8 +96,11 @@ class HomepageIndex extends React.Component {
   }
 
   render () {
-    const { tasks, createTask, currentUser, incompleteTasks } = this.props;
+    const { tasks, createTask, currentUser, incompleteTasks, completedTasks, lists} = this.props;
     const listId = this.props.match.params.listId;
+    const incompleteTaskCount = incompleteTasks.length;
+    const completedTaskCount = completedTasks.length;
+    const currentList = lists[this.props.match.params.listId]
     return (
       <section className="task-index">
         <header><GreetingContainer /></header>
@@ -113,6 +117,7 @@ class HomepageIndex extends React.Component {
           <button className={this.giveCompleteClass()} onClick={this.handleShowCompletedTask}>Completed Tasks</button>
           </div>
         {this.state.showincompleteTask ? this.showIncompleteTask() : this.showCompletedTask()}
+        <ListSummary incompleteTaskCount={incompleteTaskCount} completedTaskCount={completedTaskCount} currentList={currentList} />
         <Route path='/lists/:listId/tasks/:taskId' component={TaskDetailContainer} />
       </section>
     );
