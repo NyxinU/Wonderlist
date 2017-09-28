@@ -96,6 +96,7 @@ class HomepageIndex extends React.Component {
   }
 
   render () {
+    console.log(this.props);
     const { tasks, createTask, currentUser, incompleteTasks, completedTasks, lists} = this.props;
     const listId = this.props.match.params.listId;
     const incompleteTaskCount = incompleteTasks.length;
@@ -117,7 +118,10 @@ class HomepageIndex extends React.Component {
           <button className={this.giveCompleteClass()} onClick={this.handleShowCompletedTask}>Completed Tasks</button>
           </div>
         {this.state.showincompleteTask ? this.showIncompleteTask() : this.showCompletedTask()}
-        <ListSummary incompleteTaskCount={incompleteTaskCount} completedTaskCount={completedTaskCount} currentList={currentList} />
+        <ListSummary
+          incompleteTaskCount={incompleteTaskCount}
+          completedTaskCount={completedTaskCount}
+          currentList={currentList} />
         <Route path='/lists/:listId/tasks/:taskId' component={TaskDetailContainer} />
       </section>
     );

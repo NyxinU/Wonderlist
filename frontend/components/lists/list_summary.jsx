@@ -11,11 +11,13 @@ class ListSummary extends React.Component {
     }
     const {completedTaskCount, incompleteTaskCount, currentList} = this.props;
     return (
-      <div>
-      <div>{currentList.title}</div>
-      <div> {completedTaskCount} </div>
-      <div> {incompleteTaskCount} </div>
-      </div>
+      <aside className="list-summary">
+        <div>List Summary</div>
+        <hr/>
+        <div>{currentList.title}</div>
+        <div>Task: {completedTaskCount} </div>
+        <div>Completed: {incompleteTaskCount} </div>
+      </aside>
     );
   }
 }
