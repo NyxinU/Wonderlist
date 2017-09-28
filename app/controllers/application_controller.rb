@@ -46,4 +46,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def search
+    @tasks = Task.where("LOWER(title) LIKE ?", "%params[:query].downcase%")
+  end
+
 end
