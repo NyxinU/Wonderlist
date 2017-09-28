@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link, Redirect } from 'react-router-dom';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import TaskForm from './task_form';
 import TaskIndexItem from './task_index_item';
 import TaskDetailContainer from './task_detail_container';
@@ -11,13 +12,20 @@ class HomepageIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showincompleteTask: true
+      showincompleteTask: true,
+      dropdownOpen: false
     };
+
+    this.toggle = this.toggle.bind(this);
     this.getStateFromChild = this.getStateFromChild.bind(this);
     this.handleShowIncompleteTask = this.handleShowIncompleteTask.bind(this);
     this.handleShowCompletedTask = this.handleShowCompletedTask.bind(this);
+  }
 
-
+  toggle() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
   }
 
 
@@ -64,7 +72,7 @@ class HomepageIndex extends React.Component {
 
   showCompletedTask() {
     return (
-      <ul>
+      <ul className="completed-tasks">
         {this.props.completedTasks.map(
           task => <TaskIndexItem
           key={task.id}
@@ -108,7 +116,7 @@ class HomepageIndex extends React.Component {
             currentUser={currentUser}
             listId={listId}
             />
-          <div>
+          <div className="complete-incomplete-tab">
           <button className={this.giveIncompleteClass()} onClick={this.handleShowIncompleteTask}>Incomplete</button>
           <button className={this.giveCompleteClass()} onClick={this.handleShowCompletedTask}>Completed</button>
           </div>

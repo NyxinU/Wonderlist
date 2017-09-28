@@ -137,7 +137,7 @@ body {
 	grid-template-areas:
 	 	"header header header"
 		"nav 		form 	 aside"
-		"nav 		div aside"
+		"nav 		div    aside"
 		"nav    ul     aside";
 
 	background-color: #d7e7f5;
@@ -162,12 +162,19 @@ body {
 		a{
 			text-decoration: none;
 			color: black;
+			width: 100%;
 		}
 
 		li {
 			display: flex;
-			justify-content: flex-start;
+			justify-content: space-between;
 			padding-left: 10px;
+
+			.btn-secondary{
+				padding: 0px;
+				padding-right: 5px;
+				margin-right: 10px;
+			}
 		}
 	}
 
@@ -187,13 +194,33 @@ body {
 		}
 	}
 
+.complete-incomplete-tab {
+	grid-column-start: 2;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+
 .active-button {
 	background-color: grey;
 }
 
 	ul {
 		grid-area: ul;
-		padding-left: 0px
+		padding-left: 0px;
+
+		input[type="checkbox"] {
+			margin-left: 10px;
+		}
+
+		.task-due-date {
+			font-size: 16px;
+		}
+	}
+
+	.completed-tasks > li {
+		text-decoration: line-through;
+		width: 100%;
 	}
 
 	aside {
@@ -285,12 +312,14 @@ body {
 		height: 46px;
 		border-radius: 4px;
 		margin-bottom: 3px;
+
 	}
 
 	.task-index-link {
 		width: 100%;
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		text-decoration: none;
 		color: black;
 	}

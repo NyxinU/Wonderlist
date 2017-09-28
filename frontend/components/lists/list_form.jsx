@@ -37,7 +37,7 @@ class ListForm extends Component {
           value={this.state.title}
           onChange={this.updateState("title")}
           placeholder={"Add a new list"}
-          maxLength="40"
+          maxLength="30"
           />
         </div>
           <noscript>

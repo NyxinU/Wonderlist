@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import ListForm from './list_form';
 
 class ListIndexItem extends React.Component {
@@ -9,11 +10,19 @@ class ListIndexItem extends React.Component {
       title: this.props.list.title,
       id: this.props.list.id,
       user_id: this.props.currentUser.id,
-      toggleEditForm: false
+      toggleEditForm: false,
+      dropdownOpen: false
     };
+    this.toggle =  this.toggle.bind(this);
     this.handleDeleteList = this.handleDeleteList.bind(this);
     this.handleEditToggle = this.handleEditToggle.bind(this);
     this.handleUpdateList = this.handleUpdateList.bind(this);
+  }
+
+  toggle() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
   }
 
   handleEditToggle() {
@@ -49,7 +58,7 @@ class ListIndexItem extends React.Component {
           value={this.state.title}
           onChange={this.updateState("title")}
           placeholder={"List Name"}
-          maxLength="40"
+          maxLength="30"
           />
           <noscript>
           <input
@@ -57,7 +66,9 @@ class ListIndexItem extends React.Component {
             value={"Add List"}
             />
           </noscript>
-      </form> :
+          <button onClick={this.handleEditToggle}>Cancel</button>
+      </form>
+      :
       <div></div>
     );
   }
@@ -67,14 +78,19 @@ class ListIndexItem extends React.Component {
       const { list } = this.props;
       return (
         <div>
-          <Link to={`/lists/${list.id}`}>
             <li>
-              {list.title}
+              <Link to={`/lists/${list.id}`}>
+                {list.title}
+              </Link>
+              <Dropdown className="edit-list-dropdown" group isOpen={this.state.dropdownOpen} size="sm" toggle={this.toggle}>
+                <DropdownToggle caret></DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem onClick={this.handleEditToggle} >Rename</DropdownItem>
+                  <DropdownItem onClick={this.handleDeleteList}>Delete</DropdownItem>
+                </DropdownMenu>
+              </Dropdown>
             </li>
-          </Link>
-          <button onClick={this.handleEditToggle}>edit</button>
-          {this.editForm()}
-          <button onClick={this.handleDeleteList}> Delete </button>
+            {this.editForm()}
         </div>
       );
     }
@@ -82,3 +98,8 @@ class ListIndexItem extends React.Component {
 
 
 export default ListIndexItem;
+
+
+// <button onClick={this.handleEditToggle}>edit</button>
+// {this.editForm()}
+// <button onClick={this.handleDeleteList}> Delete </button>
