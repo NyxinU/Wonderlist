@@ -66,7 +66,7 @@ class TaskDetail extends React.Component {
     return (
       <aside className="task-detail">
         <form onSubmit={this.updateDb}>
-          <textarea
+          <input
             className={"task-detail-title"}
             type="text"
             value={title}
