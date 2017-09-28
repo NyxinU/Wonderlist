@@ -23,7 +23,7 @@ class ListsIndex extends Component {
           currentUser={this.props.currentUser}
           createList={this.props.createList}
           />
-        <Link to='/lists'>All Tasks</Link>
+        <Link className="all-task-link" to='/lists'>All Tasks</Link>
       <ul>
         {lists.map(list => <ListIndexItem
           key={list.id}
@@ -31,6 +31,7 @@ class ListsIndex extends Component {
           deleteList={deleteList}
           updateList={updateList}
           currentUser={this.props.currentUser}
+          params={this.props.match.params.listId}
           />)}
       </ul>
       </div>

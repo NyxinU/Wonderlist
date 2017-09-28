@@ -44,7 +44,4 @@ const TaskIndexItem = ({ task, callBackFromParent, listId }) => {
   );
 };
 
-// <label>Completed:
-// <span>{` ${task.completed}`}</span>
-// </label>
 export default TaskIndexItem;

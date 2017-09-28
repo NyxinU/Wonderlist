@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-
+import { withRouter } from 'react-router-dom'
 import ListsIndex from './lists_index';
 import { requestAllLists, updateList, createList, deleteList } from '../../actions/list_actions';
 import { listAsArray } from '../../reducers/selectors';
@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => ({
   deleteList: id => dispatch(deleteList(id)),
 });
 
-export default connect(
+export default withRouter (connect(
   mapStateToProps,
   mapDispatchToProps
-)(ListsIndex);
+)(ListsIndex));

@@ -159,10 +159,23 @@ body {
 	nav {
 		grid-area: nav;
 
-		a{
+		a {
 			text-decoration: none;
 			color: black;
 			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			background: white;
+			border: none;
+			list-style: none;
+			height: 46px;
+			border-radius: 4px;
+			margin-bottom: 3px;
+		}
+
+		.all-task-link {
+			padding-left: 10px;
 		}
 
 		li {
@@ -199,11 +212,25 @@ body {
 	display: flex;
 	justify-content: flex-end;
 	align-items: flex-end;
+
+	button {
+		height: 36px;
+		color: white;
+		background-color:rgba(121, 121, 121, 0.24);
+		border:0 none;
+		cursor:pointer;
+		border-radius: 5px;
+		margin-left: 3px;
+	}
 }
 
 .active-button {
-	background-color: grey;
+	background-color: #9ddaff;
 }
+
+// .inactive-button {
+// 	background-color: rgb(190, 190, 190)
+// }
 
 	ul {
 		grid-area: ul;
@@ -336,6 +363,10 @@ body {
 		border-radius: 4px;
 		width:100%;
 		height: 46px;
+	}
+
+	.add-list-input {
+		margin-bottom: 3px;
 	}
 
 	span {

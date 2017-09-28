@@ -73,24 +73,33 @@ class ListIndexItem extends React.Component {
     );
   }
 
+  giveSelectedClass(){
+    console.log(this.props);
+    if (this.props.params === this.props.list.id) {
+      return "active-button";
+    }else {
+      return "inactive-button";
+    }
+  }
+
 
     render () {
       const { list } = this.props;
       return (
         <div>
-            <li>
-              <Link to={`/lists/${list.id}`}>
-                {list.title}
-              </Link>
-              <Dropdown className="edit-list-dropdown" group isOpen={this.state.dropdownOpen} size="sm" toggle={this.toggle}>
-                <DropdownToggle caret></DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem onClick={this.handleEditToggle} >Rename</DropdownItem>
-                  <DropdownItem onClick={this.handleDeleteList}>Delete</DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
-            </li>
-            {this.editForm()}
+          <li className={this.giveSelectedClass()}>
+            <Link className={this.giveSelectedClass()} to={`/lists/${list.id}`}>
+              {list.title}
+            </Link>
+            <Dropdown className="edit-list-dropdown" group isOpen={this.state.dropdownOpen} size="sm" toggle={this.toggle}>
+              <DropdownToggle caret></DropdownToggle>
+              <DropdownMenu>
+                <DropdownItem onClick={this.handleEditToggle} >Rename</DropdownItem>
+                <DropdownItem onClick={this.handleDeleteList}>Delete</DropdownItem>
+              </DropdownMenu>
+            </Dropdown>
+          </li>
+          {this.editForm()}
         </div>
       );
     }
@@ -98,8 +107,3 @@ class ListIndexItem extends React.Component {
 
 
 export default ListIndexItem;
-
-
-// <button onClick={this.handleEditToggle}>edit</button>
-// {this.editForm()}
-// <button onClick={this.handleDeleteList}> Delete </button>
