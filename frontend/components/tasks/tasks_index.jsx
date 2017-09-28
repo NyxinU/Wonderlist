@@ -18,7 +18,6 @@ class HomepageIndex extends React.Component {
 
     this.toggle = this.toggle.bind(this);
     this.getStateFromChild = this.getStateFromChild.bind(this);
-    this.handleShowIncompleteTask = this.handleShowIncompleteTask.bind(this);
     this.handleShowCompletedTask = this.handleShowCompletedTask.bind(this);
   }
 
@@ -42,15 +41,9 @@ class HomepageIndex extends React.Component {
     this.props.updateTask(dataFromChild);
   }
 
-  handleShowIncompleteTask() {
-    this.setState({
-      showincompleteTask: true
-    });
-  }
-
   handleShowCompletedTask() {
     this.setState({
-      showincompleteTask: false
+      showincompleteTask: !this.state.showincompleteTask
     });
   }
 
@@ -117,8 +110,7 @@ class HomepageIndex extends React.Component {
             listId={listId}
             />
           <div className="complete-incomplete-tab">
-          <button className={this.giveIncompleteClass()} onClick={this.handleShowIncompleteTask}>Incomplete</button>
-          <button className={this.giveCompleteClass()} onClick={this.handleShowCompletedTask}>Completed</button>
+          <button className={this.giveCompleteClass()} onClick={this.handleShowCompletedTask}>Completed Tasks</button>
           </div>
         {this.state.showincompleteTask ? this.showIncompleteTask() : this.showCompletedTask()}
         <Route path='/lists/:listId/tasks/:taskId' component={TaskDetailContainer} />
@@ -129,5 +121,11 @@ class HomepageIndex extends React.Component {
 
 export default HomepageIndex;
 
-// const tasksPath = /tasks/.exec(nextProps.location.pathname);
-// tasksPath ? nextProps.requestAllTasks() :
+// handleShowIncompleteTask() {
+//   this.setState({
+//     showincompleteTask: true
+//   });
+// }
+
+
+// <button className={this.giveIncompleteClass()} onClick={this.handleShowIncompleteTask}>Incomplete</button>

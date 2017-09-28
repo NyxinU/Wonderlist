@@ -131,7 +131,7 @@ body {
 .task-index {
 	display: grid;
 	grid-template-columns: 1fr 3fr 2fr;
-	grid-template-rows: 1fr 1fr 1fr 13.5fr;
+	grid-template-rows: 1fr 1fr 1fr 14.7fr;
 	grid-gap: .6rem;
 
 	grid-template-areas:
@@ -213,6 +213,15 @@ body {
 	justify-content: flex-end;
 	align-items: flex-end;
 
+	// .active-button {
+	// 	font-weight: bolder;
+	// }
+	//
+	// .inactive-button {
+	// 	font-weight: lighter;
+	// 	outline: none;
+	// }
+
 	button {
 		height: 36px;
 		color: white;
@@ -221,12 +230,11 @@ body {
 		cursor:pointer;
 		border-radius: 5px;
 		margin-left: 3px;
+		outline: none;
 	}
 }
 
-.active-button {
-	background-color: #9ddaff;
-}
+
 
 // .inactive-button {
 // 	background-color: rgb(190, 190, 190)
