@@ -2,9 +2,12 @@ class Api::TasksController < ApplicationController
   before_action :deny_access_if_not_logged_in
 
   def index
-    tasks = Task.all.where(user_id: current_user.id)
+    tasks = Task.where(user_id: current_user.id)
 
-    if params[:listId]
+    if params[:query]
+      tasks = tasks.where(completed: false)
+      @tasks = tasks.where(["lower(title) LIKE ?", "%#{params[:query.downcase]}%"])
+    elsif params[:listId]
       @tasks = tasks.where(list_id: params[:listId])
     else
       @tasks = tasks

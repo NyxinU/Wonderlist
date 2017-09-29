@@ -14,12 +14,14 @@ class HomepageIndex extends React.Component {
     super(props);
     this.state = {
       showincompleteTask: true,
-      dropdownOpen: false
+      dropdownOpen: false,
+      searchQuery: '',
     };
 
     this.toggle = this.toggle.bind(this);
     this.getStateFromChild = this.getStateFromChild.bind(this);
     this.handleShowCompletedTask = this.handleShowCompletedTask.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   toggle() {
@@ -33,9 +35,13 @@ class HomepageIndex extends React.Component {
     const tasksPath = /tasks/.exec(this.props.match.path);
     tasksPath ? this.props.requestAllTasks() : this.props.requestAllTasks(this.props.match.params.listId);
   }
+
   componentWillReceiveProps(nextProps) {
-    if (this.props.match.params.listId !== nextProps.match.params.listId)
-    {nextProps.requestAllTasks(nextProps.match.params.listId);}
+    if (this.props.location.pathname !== nextProps.location.pathname) {
+      if (nextProps.location.pathname !== "/lists/search") {
+        nextProps.requestAllTasks(nextProps.match.params.listId);
+      }
+    }
   }
 
   getStateFromChild (dataFromChild) {
@@ -45,6 +51,12 @@ class HomepageIndex extends React.Component {
   handleShowCompletedTask() {
     this.setState({
       showincompleteTask: !this.state.showincompleteTask
+    });
+  }
+
+  updateState(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
     });
   }
 
@@ -62,6 +74,14 @@ class HomepageIndex extends React.Component {
         )}
       </ul>
     );
+  }
+
+  handleSearch(e) {
+    e.preventDefault();
+    // console.log(this.state.searchQuery);
+    this.props.requestAllTasks(null, this.state.searchQuery)
+    .then(() => this.props.history.push("/lists/search"));
+    this.setState({searchQuery: ''});
   }
 
   showCompletedTask() {
@@ -100,10 +120,19 @@ class HomepageIndex extends React.Component {
     const listId = this.props.match.params.listId;
     const incompleteTaskCount = incompleteTasks.length;
     const completedTaskCount = completedTasks.length;
-    const currentList = lists[this.props.match.params.listId]
+    const currentList = lists[this.props.match.params.listId];
     return (
       <section className="task-index">
-        <header><GreetingContainer /></header>
+        <header>
+          <form onSubmit={this.handleSearch}>
+            <input
+              type="text"
+              value={this.state.searchQuery}
+              onChange={this.updateState("searchQuery")}
+              />
+          </form>
+          <GreetingContainer />
+          </header>
         <nav>
           <ListsIndexContainer />
         </nav>

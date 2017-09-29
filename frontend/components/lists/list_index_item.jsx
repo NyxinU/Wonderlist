@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import ListForm from './list_form';
 
@@ -86,14 +86,13 @@ class ListIndexItem extends React.Component {
 
 
     render () {
-      console.log(this.props);
       const { list } = this.props;
       return (
         <div>
-          <li className={this.giveSelectedClass()}>
-            <Link className={this.giveSelectedClass()} to={`/lists/${list.id}`}>
+          <li>
+            <NavLink to={`/lists/${list.id}`}>
               {list.title}
-            </Link>
+            </NavLink>
             <Dropdown className="edit-list-dropdown" group isOpen={this.state.dropdownOpen} size="sm" toggle={this.toggle}>
               <DropdownToggle caret></DropdownToggle>
               <DropdownMenu>

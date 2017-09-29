@@ -16,7 +16,6 @@ class ListsIndex extends Component {
   }
 
   render () {
-    // console.log(this.props);
     const { lists, deleteList, updateList, history } = this.props;
     return (
       <div>

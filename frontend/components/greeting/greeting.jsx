@@ -7,7 +7,6 @@ const Greeting = ({ currentUser, logout }) => (
 
 const welcomeMessage = (currentUser, logout) => (
   <header>
-    <h3>Don't forget to treat yourself {currentUser.first_name}!</h3>
     <button className="session-delete-button" onClick={logout}>Log Out</button>
   </header>
 );
