@@ -6,7 +6,7 @@ class Api::TasksController < ApplicationController
 
     if params[:query]
       tasks = tasks.where(completed: false)
-      @tasks = tasks.where(["lower(title) LIKE ?", "%#{params[:query.downcase]}%"])
+      @tasks = tasks.where(["LOWER(title) LIKE ?", "%#{params[:query].downcase}%"])
     elsif params[:listId]
       @tasks = tasks.where(list_id: params[:listId])
     else

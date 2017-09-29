@@ -34,12 +34,14 @@ class HomepageIndex extends React.Component {
   componentDidMount() {
     const tasksPath = /tasks/.exec(this.props.match.path);
     tasksPath ? this.props.requestAllTasks() : this.props.requestAllTasks(this.props.match.params.listId);
+        this.setState({searchQuery: ''});
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.location.pathname !== nextProps.location.pathname) {
       if (nextProps.location.pathname !== "/lists/search") {
         nextProps.requestAllTasks(nextProps.match.params.listId);
+            this.setState({searchQuery: ''});
       }
     }
   }
@@ -81,7 +83,6 @@ class HomepageIndex extends React.Component {
     // console.log(this.state.searchQuery);
     this.props.requestAllTasks(null, this.state.searchQuery)
     .then(() => this.props.history.push("/lists/search"));
-    this.setState({searchQuery: ''});
   }
 
   showCompletedTask() {
