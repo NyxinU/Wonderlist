@@ -17,9 +17,11 @@ const App = () => (
       <ProtectedRoute path="/lists/search" component={HomepageIndexContainer} />
       <ProtectedRoute path="/lists/:listId" component={HomepageIndexContainer} />
       <ProtectedRoute path="/lists" component={HomepageIndexContainer} />
-      <Route exact path="/" component={GreetingContainer} />
     </Switch>
   </div>
 );
 
 export default App;
+
+
+// <Route exact path="/" component={GreetingContainer} />

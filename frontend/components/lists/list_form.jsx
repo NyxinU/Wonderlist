@@ -37,7 +37,7 @@ class ListForm extends Component {
           className="add-list-input"
           value={this.state.title}
           onChange={this.updateState("title")}
-          placeholder={"Add a new list"}
+          placeholder={"Add a new list..."}
           maxLength="30"
           />
         </div>
