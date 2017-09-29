@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect, NavLink } from 'react-router-dom';
 
 
 const TaskIndexItem = ({ task, callBackFromParent, listId }) => {
@@ -35,11 +35,11 @@ const TaskIndexItem = ({ task, callBackFromParent, listId }) => {
         <input
         type="checkbox"
         onChange={giveStateToParent} /> }
-      <Link to={`/lists/${task.list_id}/tasks/${task.id}`}
+      <NavLink to={`/lists/${task.list_id}/tasks/${task.id}`}
       className="task-index-link">
         <span>{task.title}</span>
         <span className="task-due-date">{task.due ? "Due:" + " " + fulldate : ""}</span>
-    </Link>
+    </NavLink>
   </li>
   );
 };

@@ -17,6 +17,8 @@ hr {
 	margin-left: 2.5%;
 }
 
+
+
 .btn-info {
 	float: right;
 	margin-right: 10%;
@@ -138,7 +140,7 @@ hr {
 .task-index {
 	display: grid;
 	grid-template-columns: 1fr 3fr 2fr;
-	grid-template-rows: 1fr 1fr 1fr 18fr;
+	grid-template-rows: 1fr 1fr 1fr 16.5fr;
 	grid-gap: .6rem;
 
 	grid-template-areas:
@@ -154,6 +156,18 @@ hr {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
+		.nav-logout {
+			display: flex;
+			align-items: center;
+			border: none;
+			background-color:inherit;
+			padding-left: 10px;
+		}
+
+		.nav-title {
+			font-family: 'Permanent Marker', cursive;
+		}
 
 		form {
 			display: subgrid;
@@ -178,6 +192,8 @@ hr {
 
 	nav {
 		grid-area: nav;
+
+
 
 		a {
 			text-decoration: none;
@@ -226,14 +242,8 @@ hr {
 	justify-content: flex-end;
 	align-items: flex-end;
 
-	// .active-button {
-	// 	font-weight: bolder;
-	// }
-	//
-	// .inactive-button {
-	// 	font-weight: lighter;
-	// 	outline: none;
-	// }
+
+
 
 	button {
 		height: 36px;
@@ -247,18 +257,16 @@ hr {
 	}
 }
 
-
-
-// .inactive-button {
-// 	background-color: rgb(190, 190, 190)
-// }
-
 	ul {
 		grid-area: ul;
 		padding-left: 0px;
 
 		input[type="checkbox"] {
 			margin-left: 10px;
+		}
+
+		.active {
+			color: rgb(0, 26, 255)
 		}
 
 		.task-due-date {

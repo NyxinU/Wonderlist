@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import HomepageIndex from './tasks_index';
 import { requestAllTasks, updateTask, createTask } from '../../actions/task_actions';
 import { allTaskAsArray, completedTasks, incompleteTasks } from '../../reducers/selectors';
+import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = state => ({
   tasks: allTaskAsArray(state.entities),
@@ -15,7 +16,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   requestAllTasks: (id, query) => dispatch(requestAllTasks(id, query)),
   updateTask: task => dispatch(updateTask(task)),
-  createTask: task => dispatch(createTask(task))
+  createTask: task => dispatch(createTask(task)),
+  logout: () => dispatch(logout()),
 });
 
 export default connect(

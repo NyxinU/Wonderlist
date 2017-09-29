@@ -116,7 +116,7 @@ class HomepageIndex extends React.Component {
   }
 
   render () {
-    const { tasks, createTask, currentUser, incompleteTasks, completedTasks, lists} = this.props;
+    const { tasks, createTask, currentUser, incompleteTasks, completedTasks, lists, logout} = this.props;
     const listId = this.props.match.params.listId;
     const incompleteTaskCount = incompleteTasks.length;
     const completedTaskCount = completedTasks.length;
@@ -124,7 +124,15 @@ class HomepageIndex extends React.Component {
     return (
       <section className="task-index">
         <header>
-          <GreetingContainer />
+          <Dropdown className="nav-user" group isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+            <DropdownToggle caret>
+              {currentUser.first_name + " " + currentUser.last_name}
+            </DropdownToggle>
+            <DropdownMenu>
+              <button className="nav-logout" onClick={logout}>Sign Out</button>
+            </DropdownMenu>
+          </Dropdown>
+          <h3 className="nav-title">Treat Yourself</h3>
           <form onSubmit={this.handleSearch}>
             <input
               type="text"
