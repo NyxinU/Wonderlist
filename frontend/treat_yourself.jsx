@@ -16,19 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-// testing start
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.login = SessionApiUtil.login;
-  window.logout = SessionApiUtil.logout;
-  window.signup = SessionApiUtil.signup;
-  window.requestAllLists = ListUtil.requestAllLists;
-  window.requestAllTasks = TaskUtil.requestAllTasks;
-  window.requestList = ListUtil.requestList;
-  window.createList = ListUtil.createList;
-  window.updateList = ListUtil.updateList;
-  window.deleteList = ListUtil.deleteList;
-// testing end
 
   const root = document.getElementById('root');
   ReactDOM.render( <Root store={ store }/> , root);

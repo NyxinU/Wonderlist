@@ -80,7 +80,6 @@ class HomepageIndex extends React.Component {
 
   handleSearch(e) {
     e.preventDefault();
-    // console.log(this.state.searchQuery);
     this.props.requestAllTasks(null, this.state.searchQuery)
     .then(() => this.props.history.push("/lists/search"));
   }
