@@ -14,7 +14,6 @@ class Api::TasksController < ApplicationController
     end
     render :index
   end
-  #if params has the list_id , then @tasks should return only the tasks w that list id USING sql .where
 
   def show
     @task = Task.find(params[:id])
