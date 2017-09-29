@@ -151,12 +151,25 @@ hr {
 
 	header {
 		grid-area: header;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 
-		header {
+		form {
+			display: subgrid;
 			display: flex;
-			justify-content: space-between;
 			align-items: center;
+			text-decoration: none;
+			color: black;
+			background: white;
+			border: none;
+			list-style: none;
+			width: 32.8%;
+			height: 43px;
+			border-radius: 6px;
+			margin-bottom: 3px;
 		}
+
 
 		h2{
 			display: inline-block;

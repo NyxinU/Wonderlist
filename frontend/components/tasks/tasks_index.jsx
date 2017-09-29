@@ -124,14 +124,15 @@ class HomepageIndex extends React.Component {
     return (
       <section className="task-index">
         <header>
+          <GreetingContainer />
           <form onSubmit={this.handleSearch}>
             <input
               type="text"
               value={this.state.searchQuery}
               onChange={this.updateState("searchQuery")}
+              placeholder={"Search..."}
               />
           </form>
-          <GreetingContainer />
           </header>
         <nav>
           <ListsIndexContainer />
