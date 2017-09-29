@@ -154,7 +154,11 @@ class HomepageIndex extends React.Component {
             listId={listId}
             />
           <div className="complete-incomplete-tab">
-          <button className={this.giveCompleteClass()} onClick={this.handleShowCompletedTask}>Completed Tasks</button>
+          <button
+            className={this.giveCompleteClass()}
+            onClick={this.handleShowCompletedTask}>
+            {this.state.showincompleteTask ? "View completed tasks" : "View Incomplete tasks"}
+          </button>
           </div>
         {this.state.showincompleteTask ? this.showIncompleteTask() : this.showCompletedTask()}
         <ListSummary

@@ -17,6 +17,7 @@ const App = () => (
       <ProtectedRoute path="/lists/search" component={HomepageIndexContainer} />
       <ProtectedRoute path="/lists/:listId" component={HomepageIndexContainer} />
       <ProtectedRoute path="/lists" component={HomepageIndexContainer} />
+      <AuthRoute eact path="/" component={GreetingContainer}/> 
     </Switch>
   </div>
 );
