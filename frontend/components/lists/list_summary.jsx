@@ -17,9 +17,9 @@ class ListSummary extends React.Component {
         <div className="aside-details">
         <div className="list-summary-content">{currentList.title}</div>
         <hr/>
-        <div className="list-summary-content">Tasks: {completedTaskCount} </div>
+        <div className="list-summary-content">Tasks: {incompleteTaskCount} </div>
         <hr/>
-        <div className="list-summary-content">Completed: {incompleteTaskCount} </div>
+        <div className="list-summary-content">Completed: {completedTaskCount} </div>
       </div>
       </aside>
     );
