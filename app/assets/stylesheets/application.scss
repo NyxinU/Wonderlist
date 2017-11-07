@@ -14,7 +14,9 @@
  */
 
 
- @import "base/fonts.scss";
- @import "base/layout.scss";
+// CSS Reset
+@import "base/reset.scss";
 
- @import "api/*";
+@import "base/layout.scss";
+
+@import "api/*";
