@@ -129,7 +129,7 @@ class HomepageIndex extends React.Component {
             type="text"
             value={this.state.searchQuery}
             onChange={this.updateState("searchQuery")}
-            placeholder={"Search..."}
+            placeholder="&#xf002;"
             />
           </form>
           <Dropdown className="nav-user" group isOpen={this.state.dropdownOpen} toggle={this.toggle}>

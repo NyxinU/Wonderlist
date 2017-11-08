@@ -3,6 +3,29 @@
 	font-family: 'Ubuntu', sans-serif;
 }
 
+html,
+body,
+main,
+.wrapper,
+.task-index {
+	height: 100%;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+	/* for vertical scrollbars */
+	height: 12px;
+	/* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(0, 0, 0, 0.5);
+}
+
 // homepage 
 
 .homepage {
@@ -39,13 +62,40 @@
 		"nav 		form 	 aside"
 		"nav 		div    aside"
 		"nav    ul     aside";
+	grid-template-columns: 1fr 2fr 2fr;
+
+	background: url("https://static.wunderlist.com/a109ea4eb200b21e1b1f28cfecc27f3e41f0e6dd/images/backgrounds/1024/11.jpg") no-repeat center center fixed;
+	background-size: cover;
+	min-height: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
 
 	header {
 		grid-area: header;
+		background-color: rgb(44, 64, 115);
+		display: flex;
+		justify-content: space-between;
+
+		form {
+
+			input {
+				background-color: rgb(44, 64, 115);
+				color: white;
+				font-family: FontAwesome;
+			}
+		}
 	}
 
 	nav {
 		grid-area: nav;
+		background-color: white;
+
+		ul {
+			li {
+				border: none;
+			}
+		}
 	}
 
 	form {
@@ -62,6 +112,14 @@
 
 	ul {
 		grid-area: ul;
+		overflow: hidden;
+		overflow-y: scroll;
+
+		li {
+			background-color: white;
+			border: 1px solid black;
+			border-radius: 5px;
+		}
 	}
 	
 }
