@@ -65,7 +65,7 @@ class HomepageIndex extends React.Component {
 
   showIncompleteTask() {
     return (
-      <ul>
+      <ul className="tasks">
         {this.props.incompleteTasks.map(
           task => <TaskIndexItem
           key={task.id}
@@ -86,7 +86,7 @@ class HomepageIndex extends React.Component {
 
   showCompletedTask() {
     return (
-      <ul className="completed-tasks">
+      <ul className="tasks">
         {this.props.completedTasks.map(
           task => <TaskIndexItem
           key={task.id}
