@@ -141,7 +141,7 @@ main,
 				background-color: rgb(44, 64, 115);
 				color: white;
 				height: 70%;
-				width: 96.5%;
+				width: 95%;
 				padding-left: 10px;
 				border-radius: 5px;
 				margin-top: 15px;
@@ -166,7 +166,7 @@ main,
 
 		.tasks {
 			margin-left: 15px;
-			height: 400px;
+			height: 80vh;
 			overflow: auto;
 
 			li {
@@ -175,7 +175,6 @@ main,
 				border-radius: 5px;
 			}
 		}
-
 	}
 
 	.task {
