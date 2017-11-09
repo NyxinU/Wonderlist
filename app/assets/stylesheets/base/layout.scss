@@ -64,10 +64,9 @@ main,
 	display: grid;
 	grid-template-areas:
 		"header header header"
-		"nav 		form 	 aside"
-		"nav 		div    aside"
-		"nav    ul     aside";
+		"nav 		div 	 aside";
 	grid-template-columns: $search-width 3fr 2fr;
+	grid-template-rows: 45px auto;
 
 	background: url("https://static.wunderlist.com/a109ea4eb200b21e1b1f28cfecc27f3e41f0e6dd/images/backgrounds/1024/11.jpg") no-repeat center center fixed;
 	background-size: cover;
@@ -127,22 +126,7 @@ main,
 		}
 	}
 
-	form {
-		grid-area: form;
-		
-		.add-task-input {
-			background-color: rgb(44,64,115);
-			color: white;
-			height: 70%;
-			width: 95.6%;
-			padding-left: 10px;
-			border-radius: 5px;
-			margin-top: 15px;
-			margin-left: 15px;
-			padding-top: 10px;
-			padding-bottom: 10px;
-		}
-	}
+	
 
 	aside {
 		grid-area: aside;
@@ -150,30 +134,52 @@ main,
 
 	div	{
 		grid-area: div; 
-	}
 
-	.complete-incomplete-tab {
-		display: flex;
-		justify-content: flex-end;
+		form {
+			grid-area: form;
+			.add-task-input {
+				background-color: rgb(44, 64, 115);
+				color: white;
+				height: 70%;
+				width: 96.5%;
+				padding-left: 10px;
+				border-radius: 5px;
+				margin-top: 15px;
+				margin-left: 15px;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+		}
 
-		button {
-			font-size: 15px;
-			background-color: rgb(50, 78, 138);
-			color: white;
-			padding: 5px;
-			border-radius: 5px;
-			margin: 5px 0px 5px 5px;
+		.complete-incomplete-tab {
+			display: flex;
+			justify-content: flex-end;
+			button {
+				font-size: 15px;
+				background-color: rgb(50, 78, 138);
+				color: white;
+				padding: 5px;
+				border-radius: 5px;
+				margin: 5px 0px 5px 5px;
+			}
+		}
+
+		.tasks {
+			margin-left: 15px;
+			height: 400px;
+			overflow: auto;
+
+			li {
+				background-color: white;
+				border: 1px solid black;
+				border-radius: 5px;
+			}
 		}
 
 	}
 
-	.tasks {
-		margin-left: 15px;
-	}
-
 	.task {
 		padding: 10px;
-
 
 		input {
 			margin-right: 10px;
@@ -191,17 +197,6 @@ main,
 		}
 	}
 
-	ul {
-		grid-area: ul;
-		overflow: hidden;
-		overflow-y: scroll;
-
-		li {
-			background-color: white;
-			border: 1px solid black;
-			border-radius: 5px;
-		}
-	}
 	
 }
 

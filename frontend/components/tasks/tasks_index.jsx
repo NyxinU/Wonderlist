@@ -125,12 +125,12 @@ class HomepageIndex extends React.Component {
       <section className="task-index">
         <header>
           <form onSubmit={this.handleSearch}>
-          <input
-            type="text"
-            value={this.state.searchQuery}
-            onChange={this.updateState("searchQuery")}
-            placeholder="&#xf002;"
-            />
+            <input
+              type="text"
+              value={this.state.searchQuery}
+              onChange={this.updateState("searchQuery")}
+              placeholder="&#xf002;"
+              />
           </form>
           <Dropdown className="nav-user" group isOpen={this.state.dropdownOpen} toggle={this.toggle}>
             <DropdownToggle caret>
@@ -140,12 +140,13 @@ class HomepageIndex extends React.Component {
               <button className="nav-logout" onClick={logout}>Sign Out</button>
             </DropdownMenu>
           </Dropdown>
+        </header>
 
-
-          </header>
         <nav>
           <ListsIndexContainer />
         </nav>
+
+        <div className="mid">
           <TaskForm
             tasks={tasks}
             createTask={createTask}
@@ -153,13 +154,17 @@ class HomepageIndex extends React.Component {
             listId={listId}
             />
           <div className="complete-incomplete-tab">
-          <button
-            className={this.giveCompleteClass()}
-            onClick={this.handleShowCompletedTask}>
-            {this.state.showincompleteTask ? "View completed tasks" : "View Incomplete tasks"}
-          </button>
+            <button
+              className={this.giveCompleteClass()}
+              onClick={this.handleShowCompletedTask}>
+              {this.state.showincompleteTask ? "View completed tasks" : "View Incomplete tasks"}
+            </button>
           </div>
-        {this.state.showincompleteTask ? this.showIncompleteTask() : this.showCompletedTask()}
+          <div className="scroll">
+            {this.state.showincompleteTask ? this.showIncompleteTask() : this.showCompletedTask()}
+          </div>
+        </div>
+
         <ListSummary
           incompleteTaskCount={incompleteTaskCount}
           completedTaskCount={completedTaskCount}
