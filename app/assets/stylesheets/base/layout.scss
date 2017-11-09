@@ -1,4 +1,5 @@
 $search-width: 20%;
+$task-width: 50%;
 
 
 
@@ -65,7 +66,7 @@ main,
 	grid-template-areas:
 		"header header header"
 		"nav 		div 	 aside";
-	grid-template-columns: $search-width 3fr 2fr;
+	grid-template-columns: $search-width $task-width 30%;
 	grid-template-rows: 45px auto;
 
 	background: url("https://static.wunderlist.com/a109ea4eb200b21e1b1f28cfecc27f3e41f0e6dd/images/backgrounds/1024/11.jpg") no-repeat center center fixed;
@@ -141,13 +142,17 @@ main,
 				background-color: rgb(44, 64, 115);
 				color: white;
 				height: 70%;
-				width: 95%;
+				width: 100%;
 				padding-left: 10px;
 				border-radius: 5px;
 				margin-top: 15px;
 				margin-left: 15px;
 				padding-top: 10px;
 				padding-bottom: 10px;
+			}
+
+			div {
+				margin-right: 25px;
 			}
 		}
 
