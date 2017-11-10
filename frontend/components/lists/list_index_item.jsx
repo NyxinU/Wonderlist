@@ -14,19 +14,12 @@ class ListIndexItem extends React.Component {
     };
     this.toggle =  this.toggle.bind(this);
     this.handleDeleteList = this.handleDeleteList.bind(this);
-    this.handleEditToggle = this.handleEditToggle.bind(this);
     this.handleUpdateList = this.handleUpdateList.bind(this);
   }
 
   toggle() {
     this.setState({
       modal: !this.state.modal
-    });
-  }
-
-  handleEditToggle() {
-    this.setState({
-      toggleEditForm: !this.state.toggleEditForm
     });
   }
 
@@ -42,7 +35,7 @@ class ListIndexItem extends React.Component {
     e.preventDefault();
     const state = Object.assign({}, this.state);
     this.props.updateList(state);
-    this.handleEditToggle();
+    this.toggle();
   }
 
   updateState(field) {
@@ -94,13 +87,27 @@ class ListIndexItem extends React.Component {
             </NavLink>
             <i className="fa fa-pencil-square-o" onClick={this.toggle} aria-hidden="true"></i>
             <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
-              <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+              <ModalHeader toggle={this.toggle}>Edit List</ModalHeader>
               <ModalBody>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          </ModalBody>
+                <form onSubmit={this.handleUpdateList}>
+                  <input
+                    type="text"
+                    value={this.state.title}
+                    onChange={this.updateState("title")}
+                    placeholder={"List Name"}
+                    maxLength="30"
+                  />
+                  <noscript>
+                    <input
+                      type="submit"
+                      value={"Add List"}
+                    />
+                  </noscript>
+                </form>
+              </ModalBody>
               <ModalFooter>
-                <Button color="primary" onClick={this.toggle}>Do Something</Button>{' '}
-                <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                <i className="fa fa-trash-o" onClick={this.handleDeleteList} aria-hidden="true"></i>
+                <Button color="primary" onClick={this.handleUpdateList}>Done</Button>{' '}
               </ModalFooter>
             </Modal>
           </li>

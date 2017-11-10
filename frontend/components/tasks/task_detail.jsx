@@ -75,7 +75,7 @@ class TaskDetail extends React.Component {
           <hr/>
           <div className="aside-details">
             <div>
-            <label>Due: {day}</label>
+            <label>{due ? `Due: ${day}` : `Due: `}</label>
             <input
               type="date"
               value={due ? due : ""}
@@ -84,24 +84,27 @@ class TaskDetail extends React.Component {
           </div>
           <hr/>
             <div>
-            <label>Reward:</label>
+            <label className="reward-label" >Reward:</label>
             <textarea
               type="text"
+              className="reward-textarea"
               value={reward ? reward : ""}
               onChange={this.updateState("reward")}
               />
             </div>
+            <hr/>
           </div>
             <input
               className="update-task"
               type="submit"
               value={"Update Task"} />
-            <footer>
-            <Link to={`/lists/${listId}`}>close x</Link>
-            <button onClick={this.handleDeleteTask} >
-              Delete Task
-            </button>
-          </footer>
+            <hr />
+            <footer className="task-detail-footer">
+              <div>
+                <Link to={`/lists/${listId}`}>close x</Link>
+                <i className="fa fa-trash-o" onClick={this.handleDeleteTask} aria-hidden="true"></i>
+              </div>
+            </footer>
         </form>
       </aside>
     );
