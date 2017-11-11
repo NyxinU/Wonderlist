@@ -28,7 +28,7 @@ class TaskForm extends Component {
   render () {
     return (
     <form onSubmit={this.handleNewTask}>
-      <div>
+      <div >
         <input
           type="text"
           className="add-task-input"

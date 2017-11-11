@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import ListForm from './list_form';
 
 class ListIndexItem extends React.Component {
@@ -10,24 +10,16 @@ class ListIndexItem extends React.Component {
       title: this.props.list.title,
       id: this.props.list.id,
       user_id: this.props.currentUser.id,
-      toggleEditForm: false,
-      dropdownOpen: false
+      modal: false
     };
     this.toggle =  this.toggle.bind(this);
     this.handleDeleteList = this.handleDeleteList.bind(this);
-    this.handleEditToggle = this.handleEditToggle.bind(this);
     this.handleUpdateList = this.handleUpdateList.bind(this);
   }
 
   toggle() {
     this.setState({
-      dropdownOpen: !this.state.dropdownOpen
-    });
-  }
-
-  handleEditToggle() {
-    this.setState({
-      toggleEditForm: !this.state.toggleEditForm
+      modal: !this.state.modal
     });
   }
 
@@ -43,7 +35,7 @@ class ListIndexItem extends React.Component {
     e.preventDefault();
     const state = Object.assign({}, this.state);
     this.props.updateList(state);
-    this.handleEditToggle();
+    this.toggle();
   }
 
   updateState(field) {
@@ -89,17 +81,35 @@ class ListIndexItem extends React.Component {
       const { list } = this.props;
       return (
         <div>
-          <li>
+          <li className="list-index-item">
             <NavLink to={`/lists/${list.id}`}>
               {list.title}
             </NavLink>
-            <Dropdown className="edit-list-dropdown" group isOpen={this.state.dropdownOpen} size="sm" toggle={this.toggle}>
-              <DropdownToggle caret></DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem onClick={this.handleEditToggle} >Rename</DropdownItem>
-                <DropdownItem onClick={this.handleDeleteList}>Delete</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
+            <i className="fa fa-pencil-square-o" onClick={this.toggle} aria-hidden="true"></i>
+            <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+              <ModalHeader toggle={this.toggle}>Edit List</ModalHeader>
+              <ModalBody>
+                <form onSubmit={this.handleUpdateList}>
+                  <input
+                    type="text"
+                    value={this.state.title}
+                    onChange={this.updateState("title")}
+                    placeholder={"List Name"}
+                    maxLength="30"
+                  />
+                  <noscript>
+                    <input
+                      type="submit"
+                      value={"Add List"}
+                    />
+                  </noscript>
+                </form>
+              </ModalBody>
+              <ModalFooter>
+                <i className="fa fa-trash-o" onClick={this.handleDeleteList} aria-hidden="true"></i>
+                <Button color="primary" onClick={this.handleUpdateList}>Done</Button>{' '}
+              </ModalFooter>
+            </Modal>
           </li>
           {this.editForm()}
         </div>
