@@ -22,7 +22,13 @@ const sessionLinks = () => (
         <Link to="/signup">Sign up</Link>
       </nav>
     </header>
-    <img src='http://marlacummins.com/wp-content/uploads/2014/10/To_Do_List.png'/>
+    <div className="intro">
+      <h1 className="intro-message-title">Keep your life in sync</h1>
+      <p className="intro-message-body">Wunderlist is the easiest way to get stuff done. Whether you’re <br/> 
+      planning a holiday, sharing a shopping list with a partner or <br/> 
+      managing multiple work projects, Wunderlist is here to help you <br/>
+      tick off all your personal and professional to-dos.</p>
+    </div>
 </div>
 );
 

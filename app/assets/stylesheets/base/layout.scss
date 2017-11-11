@@ -55,29 +55,32 @@ main,
 // homepage 
 
 .homepage {
-	display:grid;
-	grid-template-areas:
-		"header"
-		"img";
 
-
-
-	header {
-
-		grid-area: header;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		margin: 1%;
-
-		h1 {
-			font-size: 25px;
-			font-family: 'Permanent Marker', cursive;
-		}
+	* {
+		font-size: 20px;
+		font-family: 'Montserrat', sans-serif;
 	}
 
-	img {
-		grid-area: img;
+	header {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.intro {
+		height: 67vh;
+		background-color: blue;
+		background-image: url(http://res.cloudinary.com/dhsavotqt/image/upload/v1506716683/pictos_yizxll.svg);
+		background-position: center center;
+		overflow: hidden;
+		position: relative;
+		display: block;
+		
+	}
+
+	.intro-message-title,
+	.intro-message-body {
+		padding: 10px;
+		color: white;
 	}
 }
 
