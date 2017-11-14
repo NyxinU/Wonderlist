@@ -15,7 +15,7 @@ const welcomeMessage = (currentUser, logout) => (
 const sessionLinks = () => (
   <div className="homepage">
     <header>
-      <h1>Treat Yourself</h1>
+      <h1>Wonderlist</h1>
       <nav>
         <Link to="/login">Log in</Link>
         &nbsp; | &nbsp;
@@ -24,7 +24,7 @@ const sessionLinks = () => (
     </header>
     <div className="intro">
       <h1 className="intro-message-title">Keep your life in sync</h1>
-      <p className="intro-message-body">Wunderlist is the easiest way to get stuff done. Whether you’re <br/> 
+      <p className="intro-message-body">Wonderlist is the easiest way to get stuff done. Whether you’re <br/> 
       planning a holiday, sharing a shopping list with a partner or <br/> 
       managing multiple work projects, Wunderlist is here to help you <br/>
       tick off all your personal and professional to-dos.</p>

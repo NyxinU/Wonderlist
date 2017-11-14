@@ -68,8 +68,8 @@ main,
 
 	.intro {
 		height: 67vh;
-		background-color: blue;
-		background-image: url(http://res.cloudinary.com/dhsavotqt/image/upload/v1506716683/pictos_yizxll.svg);
+		background-color: #db4c3f;
+		background-image: url(http://res.cloudinary.com/dhsavotqt/image/upload/v1510691960/pictos_fm0stz.svg);
 		background-position: center center;
 		overflow: hidden;
 		position: relative;
@@ -81,6 +81,7 @@ main,
 	.intro-message-body {
 		padding: 10px;
 		color: white;
+		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 	}
 }
 

@@ -83,16 +83,6 @@ class TaskDetail extends React.Component {
               />
           </div>
           <hr/>
-            <div>
-            <label className="reward-label" >Reward:</label>
-            <textarea
-              type="text"
-              className="reward-textarea"
-              value={reward ? reward : ""}
-              onChange={this.updateState("reward")}
-              />
-            </div>
-            <hr/>
           </div>
             <input
               className="update-task"
