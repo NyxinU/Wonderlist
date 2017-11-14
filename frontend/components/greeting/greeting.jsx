@@ -15,7 +15,9 @@ const welcomeMessage = (currentUser, logout) => (
 const sessionLinks = () => (
   <div className="homepage">
     <header>
-      <h1>Wonderlist</h1>
+      <h1 >
+        <Link className="nav-to-splash" to="/">Wonderlist</Link>
+      </h1>
       <nav>
         <Link to="/login">Log in</Link>
         &nbsp; | &nbsp;

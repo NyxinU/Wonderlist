@@ -178,6 +178,9 @@ class SessionForm extends React.Component {
   render () {
     return (
         <div className="session-page">
+        <h1>
+          <Link className="nav-to-splash" to="/">Wonderlist</Link>
+        </h1>
           <div className="login-signout">{this.navLink()}</div>
           <div className="session-form-container">
             {this.props.location.pathname === "/login" ?

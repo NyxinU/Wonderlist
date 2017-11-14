@@ -16,6 +16,13 @@ main,
 	cursor: pointer;
 }
 
+.nav-to-splash:hover,
+.nav-to-splash:active,
+.nav-to-splash:active,
+.nav-to-splash:link, {
+	text-decoration: none;
+}
+
 ::-webkit-scrollbar {
 	width: 0px;
 	/* for vertical scrollbars */
@@ -64,6 +71,8 @@ main,
 	header {
 		display: flex;
 		justify-content: space-between;
+		margin: 10px;
+		font-family: bold;
 	}
 
 	.intro {
@@ -82,6 +91,21 @@ main,
 		padding: 10px;
 		color: white;
 		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	}
+
+	.intro-message-title {
+		font-size: 48px;
+		line-height: 58px;
+		font-weight: 200;
+		letter-spacing: -1px;
+		margin-top: 50px;
+		margin-bottom: 15px;
+	}
+
+	.intro-message-body {
+		font-size: 18px;
+		line-height: 28px;
+		margin-bottom: 50px;
 	}
 }
 
@@ -285,6 +309,9 @@ main,
 			display: flex;
 			justify-content: space-between;
 		}
+	}
+	.task-detail-title {
+		width: 100%;
 	}
 }
 
