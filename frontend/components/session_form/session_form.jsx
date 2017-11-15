@@ -177,17 +177,31 @@ class SessionForm extends React.Component {
 
   render () {
     return (
-        <div className="session-page">
-        <h1>
-          <Link className="nav-to-splash" to="/">Wonderlist</Link>
-        </h1>
-          <div className="login-signout">{this.navLink()}</div>
-          <div className="session-form-container">
-            {this.props.location.pathname === "/login" ?
-              this.loginForm() :
-              this.signUpForm()}
+      <div className="session-page">
+        <div className="quote-div">
+          <h1>
+            <Link className="nav-to-splash" to="/">Wonderlist</Link>
+          </h1>
+          <div className="quote">
+            <p className="quote-body">Life is much more manageable <br/>
+            when thought of as a savenger hunt<br/>
+            as opposed to a suprise party.</p>
+            <sub>- Jimmy Buffet</sub>
+          </div>
+          <div className="quotes-curated">
+            <img className="quotes-curated-img" src="http://1.bp.blogspot.com/-mWnTMXbp2jM/VS25pQWy7mI/AAAAAAAACPQ/frbp6AjcFok/s1600/Mozzie_S4_IB.jpg"/>
+            <p className="quotes-curated-by">Quotes curated by Ivan Blimise,<br/>renowned productivity expert</p>
           </div>
         </div>
+        <div className="session-form">
+          <div className="login-signout">{this.navLink()}</div>
+            <div className="session-form-container">
+              {this.props.location.pathname === "/login" ?
+                this.loginForm() :
+                this.signUpForm()}
+          </div>
+        </div>
+      </div>
     );
   }
 }
