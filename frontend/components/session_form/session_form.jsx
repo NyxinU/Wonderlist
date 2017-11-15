@@ -87,7 +87,7 @@ class SessionForm extends React.Component {
   loginForm() {
     return (
       <form onSubmit={this.handleSubmit} className="session-form-box">
-        <div>Been here before? Welcome Back!</div>
+        <p>Been here before?<br/>Welcome Back!</p>
         {this.renderErrors()}
         <div className="session-form">
             <input

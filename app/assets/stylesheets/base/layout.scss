@@ -231,6 +231,16 @@ main,
 		padding-left: 10px;
 		font-size: 15px;
 	}
+
+	.session-form-box {
+		display: flex;
+		flex-direction: column;
+
+		.session-form-input {
+			border: 1px solid black;
+			border-radius: 5px;
+		}
+	}
 }
 
 //task index 
