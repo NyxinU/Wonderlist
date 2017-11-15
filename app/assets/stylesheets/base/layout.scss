@@ -77,7 +77,8 @@ main,
 
 	.intro {
 		display: flex;
-		height: 67vh;
+		justify-content: space-around;
+		height: 60vh;
 		background-color: #db4c3f;
 		background-image: url(http://res.cloudinary.com/dhsavotqt/image/upload/v1510691960/pictos_fm0stz.svg);
 		background-position: center center;
@@ -111,10 +112,40 @@ main,
 	}
 
 	.intro-demo-pic {
-		width: 1000px;
+		width: 53%;
 		position: absolute;
-		top: 80px;
-		right: -100px;
+		top: 25%;
+		right: 0%;
+	}
+
+	.feature {
+		display: flex;
+		justify-content: space-between;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		padding-left: 2%;
+		padding-right: 5%;
+		background-color: rgb(249, 249, 249);
+	}
+
+	.feature-img {
+		width: 43%;
+	}
+
+	.feature-task-title {
+		display: flex;
+		align-items: center;
+	}
+
+	.feature-task-checkbox {
+		width: 38px;
+		padding-right: 8px;
+		margin-bottom: -4px;
+	}
+
+	.feature-task-h3 {
+		font-size: 36px;
+		margin-bottom: 0px;
 	}
 }
 

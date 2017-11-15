@@ -32,7 +32,20 @@ const sessionLinks = () => (
           managing multiple work projects, Wunderlist is here to help you <br />
           tick off all your personal and professional to-dos.</p>
       </div>
-      <img className="intro-demo-pic" src="http://res.cloudinary.com/dhsavotqt/image/upload/v1510709020/Wonderlist_Demo_sktldk.png" alt="" />      
+      <img className="intro-demo-pic" src="http://res.cloudinary.com/dhsavotqt/image/upload/v1510722670/Wonderlist_Demo_je5s1v.png" alt="" />      
+    </div>
+    <div className="feature">
+      <img className="feature-img" src="http://res.cloudinary.com/dhsavotqt/image/upload/v1510710231/Screen_Shot_2017-11-14_at_5_idtpps.png" alt=""/>
+      <div className="feature-task">
+        <div className="feature-task-title">
+          <img className="feature-task-checkbox" src="https://www.wunderlist.com/site/images/home/checkmark.svg" />
+          <h3 className="feature-task-h3">Plan for anything</h3>
+        </div>
+        <p>Organize and share your to-do, work, grocery, movies and <br/>
+        household lists. No matter what you’re planning, how big<br/>
+        or small the task may be, Wunderlist makes it super easy to<br/>
+        get stuff done.</p>
+      </div>
     </div>
 </div>
 );
