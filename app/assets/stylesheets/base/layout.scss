@@ -1,9 +1,6 @@
 $search-width: 20%;
 $task-width: 50%;
 
-
-
-
 html,
 body,
 main,
@@ -15,6 +12,7 @@ main,
 .fa {
 	cursor: pointer;
 }
+
 
 .nav-to-splash:hover,
 .nav-to-splash:active,
@@ -71,14 +69,19 @@ main,
 	header {
 		display: flex;
 		justify-content: space-between;
-		margin: 10px;
+		align-items: center;
+		margin: 10px 25px 10px 25px;
 		font-family: bold;
+	}
+
+	.nav-to-splash {
+		font-size: 30px;
 	}
 
 	.intro {
 		display: flex;
 		justify-content: space-around;
-		height: 60vh;
+		height: 70vh;
 		background-color: #db4c3f;
 		background-image: url(http://res.cloudinary.com/dhsavotqt/image/upload/v1510691960/pictos_fm0stz.svg);
 		background-position: center center;
@@ -101,7 +104,7 @@ main,
 		line-height: 58px;
 		font-weight: 200;
 		letter-spacing: -1px;
-		margin-top: 120px;
+		margin-top: 150px;
 		margin-bottom: 10px;
 	}
 
