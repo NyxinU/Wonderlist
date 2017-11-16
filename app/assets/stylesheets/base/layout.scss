@@ -13,6 +13,11 @@ main,
 	cursor: pointer;
 }
 
+.clickable, .clickable:focus {
+	outline: 0;
+	
+}
+
 
 .nav-to-splash:hover,
 .nav-to-splash:active,
@@ -268,7 +273,7 @@ main,
 			user-select: none;
 			outline: 0 !important;
 			text-decoration-line: none;
-			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 		}
 
 		.btn-info:hover {
@@ -340,7 +345,7 @@ main,
 		"header header header"
 		"nav 		div 	 aside";
 	grid-template-columns: $search-width $task-width 30%;
-	grid-template-rows: 45px auto;
+	grid-template-rows: 50px auto;
 
 	background: url("https://static.wunderlist.com/a109ea4eb200b21e1b1f28cfecc27f3e41f0e6dd/images/backgrounds/1024/11.jpg") no-repeat center center fixed;
 	background-size: cover;
@@ -354,7 +359,7 @@ main,
 		background-color: rgb(51, 74, 133);
 		display: flex;
 		justify-content: space-between;
-		height: 45px;
+		height: 50px;
 
 		form {
 			display: flex;
@@ -367,7 +372,7 @@ main,
 				background-color: rgb(44,64,115);
 				color: white;
 				font-family: FontAwesome;
-				height: 70%;
+				height: 60%;
 				width: 94%;
 				padding-left: 10px;
 				border-radius: 5px;
@@ -444,9 +449,9 @@ main,
 				font-size: 15px;
 				background-color: rgb(50, 78, 138);
 				color: white;
-				padding: 5px;
+				padding: 7px 9px;
 				border-radius: 5px;
-				margin: 5px 0px 5px 5px;
+				margin: 6px 0px;
 			}
 		}
 
