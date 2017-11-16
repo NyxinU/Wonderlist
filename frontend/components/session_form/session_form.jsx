@@ -87,7 +87,7 @@ class SessionForm extends React.Component {
   loginForm() {
     return (
       <form onSubmit={this.handleSubmit} className="session-form-box">
-        <p>Been here before?<br/>Welcome Back!</p>
+        <p>Welcome Back!</p>
         {this.renderErrors()}
         <div className="session-form">
             <input
@@ -122,7 +122,7 @@ class SessionForm extends React.Component {
   signUpForm() {
     return (
       <form onSubmit={this.handleSubmit} className="session-form-box">
-        <div>Sign up for free.</div>
+        <p>Sign up for free.</p>
         {this.renderErrors()}
           <div className="session-form">
             <input

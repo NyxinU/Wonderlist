@@ -16,9 +16,10 @@ main,
 
 .nav-to-splash:hover,
 .nav-to-splash:active,
-.nav-to-splash:active,
+.nav-to-splash:focus,
 .nav-to-splash:link, {
 	text-decoration: none;
+	outline: none;
 }
 
 ::-webkit-scrollbar {
@@ -232,13 +233,82 @@ main,
 		font-size: 15px;
 	}
 
+	.session-form {
+		display: flex;
+		align-items: baseline;
+		flex-direction: column;
+
+		.btn-info {
+			position: absolute;
+			left: 81.6vw;
+			top: 10vh;
+			font-size: 15px;
+			padding: 5px 11px 4px;
+			font-weight: 700;
+			color: rgba(0, 0, 0, 0.5);
+			background-color: rgba(0, 96, 191, 0.1);
+			border-color: transparent;
+			font-weight: 700;
+			text-align: center;
+			vertical-align: middle;
+			touch-action: manipulation;
+			cursor: pointer;
+			background-image: none;
+			border: 1px solid transparent;
+			white-space: nowrap;
+			line-height: 1.42857143;
+			border-radius: 3px;
+			user-select: none;
+			outline: 0 !important;
+			text-decoration-line: none;
+		}
+
+		.session-form-container {
+			padding-top: 8vh;
+		}
+	}
+
 	.session-form-box {
 		display: flex;
 		flex-direction: column;
+		padding-top: 15vh;
 
+		p {
+			margin-bottom: 28px;
+		}
 		.session-form-input {
-			border: 1px solid black;
-			border-radius: 5px;
+			padding: 5px 10px;
+			font-size: 23px;
+			line-height: 1.3333333;
+			border-radius: 3px;
+			color: #555555;
+			background-color: #fff;
+			background-image: none;
+			border: 1px solid #ccc;
+			width: 100%
+		}
+
+
+		.session-create-button {
+			margin-bottom: 0;
+			font-weight: 700;
+			text-align: center;
+			vertical-align: middle;
+			cursor: pointer;
+			border: 1px solid transparent;
+			white-space: nowrap;
+			color: #fff;
+			background-color: #2b88d9;
+			border-color: transparent;
+			line-height: 1.3333333;
+			padding: 5px 10px;
+			display: block;
+			width: 100%;
+			border-radius: 4px;
+		}
+
+		.session-create-button:hover {
+			text-decoration-line: underline;
 		}
 	}
 }
