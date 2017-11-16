@@ -35,7 +35,7 @@ const sessionLinks = () => (
       <img className="intro-demo-pic" src="http://res.cloudinary.com/dhsavotqt/image/upload/v1510722670/Wonderlist_Demo_je5s1v.png" alt="" />      
     </div>
     <div className="feature">
-      <img className="feature-img" src="http://res.cloudinary.com/dhsavotqt/image/upload/v1510710231/Screen_Shot_2017-11-14_at_5_idtpps.png" alt=""/>
+      <img className="feature-img" src="http://res.cloudinary.com/dhsavotqt/image/upload/v1510860303/Screen_Shot_2017-11-16_at_11_q8wxzd.png" alt=""/>
       <div className="feature-task">
         <div className="feature-task-title">
           <img className="feature-task-checkbox" src="https://www.wunderlist.com/site/images/home/checkmark.svg" />
