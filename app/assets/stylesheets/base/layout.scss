@@ -73,10 +73,15 @@ main,
 		align-items: center;
 		margin: 10px 25px 10px 25px;
 		font-family: bold;
+
+		a {
+			text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+		}
 	}
 
 	.nav-to-splash {
 		font-size: 30px;
+		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 	}
 
 	.intro {
@@ -181,6 +186,7 @@ main,
 		position: absolute;
 		top: 43px;
 		left: 7vw;
+		text-shadow: 0 1px 3px rgba(0, 0, 0, 1);
 	}
 
 	.quote-div {
@@ -201,6 +207,7 @@ main,
 	.quote {
 		sub {
 			color: rgba(255, 255, 255, 0.9);
+			text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 		}
 	}
 
@@ -261,6 +268,11 @@ main,
 			user-select: none;
 			outline: 0 !important;
 			text-decoration-line: none;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+		}
+
+		.btn-info:hover {
+			background-color: rgba(0, 77, 145, 0.15);
 		}
 
 		.session-form-container {
@@ -293,22 +305,23 @@ main,
 			margin-bottom: 0;
 			font-weight: 700;
 			text-align: center;
-			vertical-align: middle;
 			cursor: pointer;
 			border: 1px solid transparent;
 			white-space: nowrap;
 			color: #fff;
-			background-color: #2b88d9;
+			background-color: #61adef;
 			border-color: transparent;
 			line-height: 1.3333333;
 			padding: 5px 10px;
 			display: block;
 			width: 100%;
 			border-radius: 4px;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);			
 		}
 
 		.session-create-button:hover {
-			text-decoration-line: underline;
+			text-decoration-line: none;
+			background-color: #56a1df;
 		}
 	}
 }
