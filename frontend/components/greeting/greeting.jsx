@@ -47,6 +47,17 @@ const sessionLinks = () => (
         get stuff done.</p>
       </div>
     </div>
+    <footer>
+      <button className="clickable" onClick={() => { window.open("https://www.linkedin.com/in/yiunixon/") }}>
+        <i className="fa fa-linkedin-square"  aria-hidden="true"></i>
+        linkedin
+      </button>
+      &nbsp; | &nbsp;
+      <button className="clickable github" onClick={() => { window.open("https://github.com/NyxinU") }}>
+        <i className="fa fa-github-square"  aria-hidden="true"></i>
+        github
+      </button>
+    </footer>
 </div>
 );
 

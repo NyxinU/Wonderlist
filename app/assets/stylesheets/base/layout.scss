@@ -14,8 +14,9 @@ main,
 }
 
 .clickable, .clickable:focus {
+	display: flex;
+	align-items: center;
 	outline: 0;
-	
 }
 
 
@@ -161,6 +162,25 @@ main,
 	.feature-task-h3 {
 		font-size: 36px;
 		margin-bottom: 0px;
+	}
+
+	footer {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		background-color: rgb(246, 246, 246);
+
+		button {
+
+			.fa {
+				padding: 7px;
+				font-size: 23px;
+			}
+		}
+
+		.github {
+			margin-right: 25px; 
+		}
 	}
 }
 
