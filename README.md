@@ -41,5 +41,5 @@ export const fetchTasks = (listId, query) => (
   })
 );
 ```
-## To-do
+## Future direction
 ![](app/assets/images/future_todos.png)
