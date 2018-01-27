@@ -5,7 +5,7 @@ Wonderlist is a single-page application inspired by Wunderlist & Remember the Mi
 ## Features 
 * Secure user authentication
 * Lists to organize tasks 
-* taks to keep track of to-dos
+* Tasks to keep track of to-dos
 * Summary of user's progress 
 * Search taks by keywords
 
